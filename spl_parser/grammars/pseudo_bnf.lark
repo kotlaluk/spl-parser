@@ -1,23 +1,31 @@
 ?start: rule+
-rule: rule_definition "::=" (expression | COMMENT)
-expression: list | list "|" expression
+rule: rule_definition "::=" COMMAND? (expression | COMMENT)*
+?expression: list | list "|" expression
 ?list: term | term list | term_group | term_group list
-term_group: "(" expression ")" repeat_chars*
-?term: (literal | "<" rule_name ">" | key_value)+
-key_value: argument "=" term | "<" rule_name ">" "=" term
-literal: /\w+/ | ESCAPED_STRING | SYMBOL
-rule_name: RULE_NAME
-rule_definition: "<"  /[\w-]+/ ">"
-argument: /\w+/
-repeat_chars: "?" | "*" | "+"
+?term_group: ("(" expression ")" REPEAT_CHARS*)+ | ("[" expression "]" REPEAT_CHARS*)+
+?term: (operator | rule_name REPEAT_CHARS* | key_value | range | optional_argument)+
+key_value: key "=" value
+key: argument | "(" argument_group ")" | rule_name
+argument_group: argument | argument_group "|" argument
+value: term | term_group
+range: rule_name ":" rule_name
+operator: OPERATOR_W | operator_symbol
+?operator_symbol: OPERATOR_S | OPERATOR_S EQUAL_SIGN | EQUAL_SIGN EQUAL_SIGN
+rule_name: "<" RULE_NAME ">" | "<" RULE_NAME ":" /[\w-]+/ ">"
+rule_definition: "<" RULE_NAME ">"
+optional_argument: argument REPEAT_CHARS+
+argument: ARGUMENT
 
-SYMBOL: "=" | "!"
+COMMAND: /\w+/
+ARGUMENT: /\w+/
+OPERATOR_W: /\w+/
+OPERATOR_S: "+" | "-" | "." | "!" | "*" | "%" | "/" | "," | "\",\"" | "\\\"" | ";" | "$" | "@" | ESCAPED_STRING
+EQUAL_SIGN: "="
 RULE_NAME: /[\w-]+/
 COMMENT: /\?..*\?/
+REPEAT_CHARS: "?" | "*" | "+"
 
 %import common.ESCAPED_STRING
-%import common.NEWLINE
-%import common.LETTER
-%import common.DIGIT
 %import common.WS
+
 %ignore WS
