@@ -15,3 +15,24 @@ class SPLTerm:
 
     def add_alias(self, alias):
         self.aliases.add(alias)
+
+
+class SPLCommand:
+    def __init__(self, name):
+        self.name = name
+        self.aliases = list()
+        self.arguments = list()
+        self.functions = list()
+        self.operators = list()
+
+    def add_operators(self, operators):
+        for o in operators:
+            self.operators.append(o)
+
+    def add_arguments(self, arguments):
+        for a in arguments:
+            self.arguments.append(a)
+
+    def add_functions(self, functions):
+        for f in functions:
+            self.functions.append(f)
