@@ -1,0 +1,23 @@
+?start: rule+
+rule: rule_definition "::=" (expression | COMMENT)
+expression: list | list "|" expression
+?list: term | term list | term_group | term_group list
+term_group: "(" expression ")" repeat_chars*
+?term: (literal | "<" rule_name ">" | key_value)+
+key_value: argument "=" term | "<" rule_name ">" "=" term
+literal: /\w+/ | ESCAPED_STRING | SYMBOL
+rule_name: RULE_NAME
+rule_definition: "<"  /[\w-]+/ ">"
+argument: /\w+/
+repeat_chars: "?" | "*" | "+"
+
+SYMBOL: "=" | "!"
+RULE_NAME: /[\w-]+/
+COMMENT: /\?..*\?/
+
+%import common.ESCAPED_STRING
+%import common.NEWLINE
+%import common.LETTER
+%import common.DIGIT
+%import common.WS
+%ignore WS
