@@ -1,0 +1,57 @@
+    {
+        "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+        "name": "SPL",
+        "patterns": [
+            {
+                "include": "#commands"
+            }
+        ],
+        "repository": {
+            "commands": {
+                "patterns": [
+                    {
+                        "include": "#commands.<example_command>"
+                    }
+                ]
+            },
+            "commands.<example_command>": {
+                "begin": "(?<=\\[|\\|)\\s+(<example_command>|<example_alias>)\\b",
+                "end": "(?<=\\]|\\|)",
+                "captures": {
+                    "1": { "name": "support.class.spl" }
+                },
+                "patterns": [
+                    {
+                        "include": "#arguments.<example_command>"
+                    },
+                    {
+                        "include": "#functions.<example_command>"
+                    },
+                    {
+                        "include": "#operators.<example_command>"
+                    }
+                ]
+            },
+            "operators.<example_command>": {
+                "name": "keyword.operator.word.spl",
+                "match": "\\b(<example_operator>)\\b"
+            },
+            "functions.<example_command>": {
+                "match": "\\b(<example_function>)(\\(|\\b)",
+                "captures": {
+                    "1": { "name": "support.function.spl" }
+                }
+            },
+            "arguments.<example_command>": {
+                "patterns": [
+                    {
+                        "match": "(<example_argument>)=(?:.+?)(?:\\s|$)",
+                        "captures": {
+                            "1": { "name": "entity.other.attribute-name.spl" }
+                        }
+                    }
+                ]
+            }
+        },
+        "scopeName": "source.spl"
+    }
