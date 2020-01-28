@@ -15,22 +15,12 @@
                 ]
             },
             "commands.<example_command>": {
-                "begin": "(?<=\\[|\\|)\\s+(<example_command>|<example_alias>)\\b",
+                "begin": "(?<=\\[|\\|)\\s+(<example_command_alias>)\\b",
                 "end": "(?<=\\]|\\|)",
                 "captures": {
                     "1": { "name": "support.class.spl" }
                 },
-                "patterns": [
-                    {
-                        "include": "#arguments.<example_command>"
-                    },
-                    {
-                        "include": "#functions.<example_command>"
-                    },
-                    {
-                        "include": "#operators.<example_command>"
-                    }
-                ]
+                "patterns": []
             },
             "operators.<example_command>": {
                 "name": "keyword.operator.word.spl",

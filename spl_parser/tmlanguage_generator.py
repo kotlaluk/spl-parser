@@ -3,7 +3,7 @@ import json
 
 
 COMMAND_PLACEHOLDER = "<example_command>"
-ALIAS_PLACEHOLDER = "<example_alias>"
+ALIAS_PLACEHOLDER = "<example_command_alias>"
 ARGUMENT_PLACEHOLDER = "<example_argument>"
 FUNCTION_PLACEHOLDER = "<example_function>"
 OPERATOR_PLACEHOLDER = "<example_operator>"
@@ -34,32 +34,46 @@ class TmLanguageGenerator:
         del empty_template["repository"][f"operators.{COMMAND_PLACEHOLDER}"]
         self.grammar = empty_template
 
-    def generate_grammar_block(self, name, template_block, source=None, targets=list()):
+    def generate_include(self, name, type):
+        return {"include": f"#{type}.{name}"}
+
+    def generate_grammar_block(self, name, template_block, source, targets):
         block_str = json.dumps(template_block)
-        block_str = block_str.replace(COMMAND_PLACEHOLDER, name)
-        if source is not None:
-            if len(targets) == 0:
-                block_str = block_str.replace(source, "")
-            else:
-                if len(targets) > 1:
-                    for target in targets[:-1]:
-                        block_str = block_str.replace(source, f"{target}|{source}")
-                block_str = block_str.replace(source, targets[-1])
+        if len(targets) > 1:
+            for target in targets[:-1]:
+                block_str = block_str.replace(source, f"{target}|{source}")
+        block_str = block_str.replace(source, targets[-1])
         return json.loads(block_str)
 
     def add_command(self, spl_command):
         # Generate grammar blocks from the command and insert them into the grammar
-        commands_entry = self.generate_grammar_block(spl_command.name, self.commands_entry)
-        commands_block = self.generate_grammar_block(spl_command.name, self.commands_block, source=ALIAS_PLACEHOLDER, targets=spl_command.aliases)
-        arguments_block = self.generate_grammar_block(spl_command.name, self.arguments_block, source=ARGUMENT_PLACEHOLDER, targets=spl_command.arguments)
-        functions_block = self.generate_grammar_block(spl_command.name, self.functions_block, source=FUNCTION_PLACEHOLDER, targets=spl_command.functions)
-        operators_block = self.generate_grammar_block(spl_command.name, self.operators_block, source=OPERATOR_PLACEHOLDER, targets=spl_command.operators)
-
-        self.grammar["repository"]["commands"]["patterns"].append(commands_entry)
+        command_aliases = [spl_command.name] + spl_command.aliases
+        commands_block = self.generate_grammar_block(spl_command.name, self.commands_block,
+                            source=ALIAS_PLACEHOLDER, targets=command_aliases)
+        self.grammar["repository"]["commands"]["patterns"]\
+            .append(self.generate_include(spl_command.name, "commands"))
         self.grammar["repository"][f"commands.{spl_command.name}"] = commands_block
-        self.grammar["repository"][f"arguments.{spl_command.name}"] = arguments_block
-        self.grammar["repository"][f"functions.{spl_command.name}"] = functions_block
-        self.grammar["repository"][f"operators.{spl_command.name}"] = operators_block
+
+        if spl_command.arguments:
+            arguments_block = self.generate_grammar_block(spl_command.name, self.arguments_block,
+                                source=ARGUMENT_PLACEHOLDER, targets=spl_command.arguments)
+            self.grammar["repository"][f"commands.{spl_command.name}"]["patterns"]\
+                .append(self.generate_include(spl_command.name, "arguments"))
+            self.grammar["repository"][f"arguments.{spl_command.name}"] = arguments_block
+
+        if spl_command.functions:
+            functions_block = self.generate_grammar_block(spl_command.name, self.functions_block,
+                                source=FUNCTION_PLACEHOLDER, targets=spl_command.functions)
+            self.grammar["repository"][f"commands.{spl_command.name}"]["patterns"]\
+                .append(self.generate_include(spl_command.name, "functions"))
+            self.grammar["repository"][f"functions.{spl_command.name}"] = functions_block
+
+        if spl_command.operators:
+            operators_block = self.generate_grammar_block(spl_command.name, self.operators_block,
+                                source=OPERATOR_PLACEHOLDER, targets=spl_command.operators)
+            self.grammar["repository"][f"commands.{spl_command.name}"]["patterns"]\
+                .append(self.generate_include(spl_command.name, "operators"))
+            self.grammar["repository"][f"operators.{spl_command.name}"] = operators_block
 
     def save_grammar(self, outfile):
         # TODO make backup if file exists
