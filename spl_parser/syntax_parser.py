@@ -24,9 +24,8 @@ def get_token_data(subtree):
     return str(subtree.children[0])
 
 
-def build_syntax_trees(path_to_grammar, spl_terms):
-    with open(path_to_grammar) as f:
-        parser = LarkParser(f.read())
+def build_syntax_trees(pseudo_bnf, spl_terms):
+    parser = LarkParser(pseudo_bnf)
     trees = dict()
     for name, term in spl_terms.items():
         try:

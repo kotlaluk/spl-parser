@@ -11,6 +11,12 @@ class SPLTerm:
     def get_bnf_syntax(self):
         return f"<{self.name}> ::= {self.syntax}"
 
+    def print(self):
+        print(f"*** {self.name} ***")
+        print(f"Syntax: {self.syntax}")
+        if self.description:
+            print(f"Description: {self.description}")
+
 
 class SPLCommand(SPLTerm):
     def __init__(self, name, syntax):
@@ -30,3 +36,8 @@ class SPLCommand(SPLTerm):
             self.arguments.extend(list(arguments))
             self.functions.extend(list(functions))
             self.operators.extend(list(operators))
+
+    def print(self):
+        super().print()
+        if self.aliases:
+            print(f"Aliases: {' '.join(self.aliases)}")

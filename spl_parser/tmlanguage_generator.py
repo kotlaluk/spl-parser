@@ -10,10 +10,7 @@ OPERATOR_PLACEHOLDER = "<example_operator>"
 
 
 class TmLanguageGenerator:
-    def __init__(self, path_to_template):
-        with open(path_to_template) as f:
-            template_data = f.read()
-        # TODO try/except
+    def __init__(self, template_data):
         self.template = json.loads(template_data)
         self.__parse_template()
 
@@ -49,7 +46,7 @@ class TmLanguageGenerator:
         # Generate grammar blocks from the command and insert them into the grammar
         command_aliases = [spl_command.name] + spl_command.aliases
         commands_block = self.generate_grammar_block(spl_command.name, self.commands_block,
-                            source=ALIAS_PLACEHOLDER, targets=command_aliases)
+                         source=ALIAS_PLACEHOLDER, targets=command_aliases)
         self.grammar["repository"]["commands"]["patterns"]\
             .append(self.generate_include(spl_command.name, "commands"))
         self.grammar["repository"][f"commands.{spl_command.name}"] = commands_block

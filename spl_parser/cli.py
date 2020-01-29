@@ -31,7 +31,7 @@ def cli(obj=None):
 
 @cli.group(help="Specify a local searchbnf file (.json or .conf) as SOURCE_FILE.")
 @click.argument("file", metavar="SOURCE_FILE", required=True,
-                type=click.Path(exists=True), callback=validate_file)
+                type=click.Path(exists=True, readable=True), callback=validate_file)
 @click.pass_context
 def local(ctx, file):
     ctx.obj = LocalSplResource(file)
@@ -52,7 +52,7 @@ def view(ctx, spl_command):
 
 
 @click.command(help="Generate a tmLanguage grammar for SPL.")
-@click.option("-o", "--outfile", metavar="OUTPUT_FILE", type=click.File(mode="w"),
+@click.option("-o", "--outfile", metavar="OUTPUT_FILE", type=click.Path(file_okay=True, writable=True),
               default="spl.tmLanguage.json",
               help="File to which the tmLanguage grammar will be saved.")
 @click.pass_context
