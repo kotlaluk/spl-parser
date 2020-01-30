@@ -1,9 +1,10 @@
 import click
+import os
 import re
 import sys
 
 from spl_parser.spl_resource import LocalSplResource, RemoteSplResource
-from spl_parser.cli_print import log_message
+from spl_parser.cli_print import log_message, enable_debug
 from spl_parser.exceptions import SplParserError
 
 
@@ -27,12 +28,15 @@ def validate_url(ctx, paarams, url):
 
 
 @click.group()
-def cli(obj=None):
+@click.option("--debug", is_flag=True, help="Enable debug output.")
+def cli(debug, obj=None):
     """Tool for processing Splunk's Search Processing Language (SPL)."""
-    pass
+
+    if debug:
+        enable_debug()
 
 
-@cli.group(help="Specify a local searchbnf file (.json or .conf) as SOURCE_FILE.")
+@cli.group(help="Specify local searchbnf file (.json or .conf) as SOURCE_FILE.")
 @click.argument("file", metavar="SOURCE_FILE", required=True,
                 type=click.Path(exists=True, readable=True), callback=validate_file)
 @click.pass_context
@@ -43,9 +47,11 @@ def local(ctx, file):
 
 @cli.group(help="Specify URL of a remote Splunk server.")
 @click.argument("url", required=True, type=str, callback=validate_url)
+@click.option("--username", prompt="Splunk Username", envvar="SPLUNK_USERNAME")
+@click.option("--password", prompt=True, hide_input=True, envvar="SPLUNK_PASSWORD")
 @click.pass_context
-def remote(ctx, url):
-    ctx.obj = RemoteSplResource(url)
+def remote(ctx, url, username, password):
+    ctx.obj = RemoteSplResource(url, username, password)
     log_message("INFO", f"Using remote Splunk server: {url}")
 
 
@@ -61,7 +67,8 @@ def view(ctx, spl_command):
 
 
 @click.command(help="Generate a tmLanguage grammar for SPL.")
-@click.option("-o", "--outfile", metavar="OUTPUT_FILE", type=click.Path(file_okay=True, writable=True),
+@click.option("-o", "--outfile", metavar="OUTPUT_FILE",
+              type=click.Path(file_okay=True, writable=True),
               default="spl.tmLanguage.json",
               help="File to which the tmLanguage grammar will be saved.")
 @click.pass_context
