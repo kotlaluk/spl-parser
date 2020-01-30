@@ -1,6 +1,8 @@
 from lark import Lark
 from lark.exceptions import UnexpectedCharacters, UnexpectedEOF
 
+from spl_parser.cli_print import log_message
+
 
 class LarkParser:
     def __init__(self, grammar):
@@ -32,14 +34,13 @@ def build_syntax_trees(pseudo_bnf, spl_terms):
             tree = parser.parse(term.get_bnf_syntax())
             trees[name] = tree
         except (UnexpectedCharacters, UnexpectedEOF):
-            # TODO proper logging
-            print(f"Problems while parsing: <{name}>")
+            log_message("DEBUG", f"<{name}> could not be parsed correctly")
     return trees
 
 
 def find_related_trees(name, trees):
+    visited = set()
     try:
-        visited = set()
         tree = trees[name]
         name = get_token_data(next(tree.find_data("rule_definition")))
         visited.add(name)
@@ -58,8 +59,7 @@ def find_related_trees(name, trees):
                     except KeyError:
                         pass
     except KeyError:
-        # TODO proper logging
-        print(f"Tree not found: <{name}>")
+        pass
     return choose_trees(visited, trees)
 
 

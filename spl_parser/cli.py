@@ -1,7 +1,10 @@
 import click
 import re
+import sys
 
 from spl_parser.spl_resource import LocalSplResource, RemoteSplResource
+from spl_parser.cli_print import log_message
+from spl_parser.exceptions import SplParserError
 
 
 def validate_file(ctx, params, file):
@@ -35,6 +38,7 @@ def cli(obj=None):
 @click.pass_context
 def local(ctx, file):
     ctx.obj = LocalSplResource(file)
+    log_message("INFO", f"Using local searchbnf file: {file}")
 
 
 @cli.group(help="Specify URL of a remote Splunk server.")
@@ -42,13 +46,18 @@ def local(ctx, file):
 @click.pass_context
 def remote(ctx, url):
     ctx.obj = RemoteSplResource(url)
+    log_message("INFO", f"Using remote Splunk server: {url}")
 
 
 @click.command(help="View details about an SPL command.")
 @click.argument("spl_command", type=str, required=True)
 @click.pass_context
 def view(ctx, spl_command):
-    ctx.obj.view_command(spl_command)
+    try:
+        ctx.obj.view_command(spl_command)
+    except SplParserError as e:
+        log_message("ERROR", e)
+        sys.exit(1)
 
 
 @click.command(help="Generate a tmLanguage grammar for SPL.")
@@ -57,7 +66,13 @@ def view(ctx, spl_command):
               help="File to which the tmLanguage grammar will be saved.")
 @click.pass_context
 def generate(ctx, outfile):
-    ctx.obj.generate_grammar(outfile)
+    try:
+        ctx.obj.generate_grammar(outfile)
+        log_message("INFO", "SPL grammar was generated successfully!")
+    except SplParserError as e:
+        log_message("ERROR", e)
+        log_message("ERROR", "SPL grammar was not generated!")
+        sys.exit(2)
 
 
 local.add_command(view)
