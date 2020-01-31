@@ -1,0 +1,3 @@
+include LICENSE
+recursive-include tests *.conf *.py *.json *.lark
+recursive-include examples *.conf *.json
