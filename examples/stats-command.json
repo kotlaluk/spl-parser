@@ -1,14 +1,14 @@
 {
     "links": {
-        "create": "/servicesNS/nobody/system/configs/conf-searchbnf/_new",
-        "_reload": "/servicesNS/nobody/system/configs/conf-searchbnf/_reload",
-        "_acl": "/servicesNS/nobody/system/configs/conf-searchbnf/_acl"
+        "create": "/servicesNS/-/-/configs/conf-searchbnf/_new",
+        "_reload": "/servicesNS/-/-/configs/conf-searchbnf/_reload",
+        "_acl": "/servicesNS/-/-/configs/conf-searchbnf/_acl"
     },
-    "origin": "https://localhost:8089/servicesNS/nobody/system/configs/conf-searchbnf",
-    "updated": "2019-12-05T22:15:09+01:00",
+    "origin": "https://localhost:8089/servicesNS/-/-/configs/conf-searchbnf",
+    "updated": "2020-01-31T20:52:48+01:00",
     "generator": {
-        "build": "c60db69f8e32",
-        "version": "7.3.2"
+        "build": "6db836e2fb9e",
+        "version": "8.0.1"
     },
     "entry": [
         {

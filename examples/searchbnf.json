@@ -2627,7 +2627,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "=|!=|\"<\"|\"<\"=|\">\"|\">\"="
+                "syntax": "==|!=|\"<\"|\"<\"=|\">\"|\">\"="
             }
         },
         {
@@ -6709,7 +6709,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "(<field>|<string>|<num>) (\"<\"|\">\"|\"<\"=|\">\"=|!=|=|==|LIKE) <eval-expression>"
+                "syntax": "(<field>|<string>|<num>) (\"<\"|\">\"|\"<\"=|\">\"=|!=|==|==|LIKE) <eval-expression>"
             }
         },
         {
@@ -7349,7 +7349,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "eventtype(=|!=)<string>"
+                "syntax": "eventtype(==|!=)<string>"
             }
         },
         {
@@ -7391,7 +7391,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "eventtypetag(=|!=)<string>"
+                "syntax": "eventtypetag(==|!=)<string>"
             }
         },
         {
@@ -8330,7 +8330,7 @@
                 "maintainer": "david",
                 "related": "search",
                 "shortdesc": "Takes the results of a subsearch and formats them into a single result.",
-                "syntax": "format (mvsep=\"<mv separator>\")? (maxresults=<int>)? (<row-prefix> <column-prefix> <column-separator> <column-end> <row-separator> <row end>)?",
+                "syntax": "format (mvsep=\"<mv separator>\")? (maxresults=<int>)? (<row-prefix> <column-prefix> <column-separator> <column-end> <row-separator> <row-end>)?",
                 "tags": "format query subsearch",
                 "usage": "public"
             }
@@ -9211,7 +9211,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "host(=|!=)<string>"
+                "syntax": "host(==|!=)<string>"
             }
         },
         {
@@ -9253,7 +9253,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "hosttag(=|!=)<string>"
+                "syntax": "hosttag(==|!=)<string>"
             }
         },
         {
@@ -9561,7 +9561,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "index(=|!=)<string>"
+                "syntax": "index(==|!=)<string>"
             }
         },
         {
@@ -12364,7 +12364,7 @@
                 "maintainer": "brian",
                 "related": "dbinspect",
                 "shortdesc": "Returns a list of source, sourcetypes, or hosts.",
-                "syntax": "metadata type=<metadata-type> (<index-opt>)* (splunk_server=<wc-string>)?  (splunk_server_group=<wc-string>)* (datatype=<metric|event>)?",
+                "syntax": "metadata type=<metadata-type> (<index-opt>)* (splunk_server=<wc-string>)?  (splunk_server_group=<wc-string>)* (datatype=<metric>)?",
                 "tags": "metadata host source sourcetype metric",
                 "usage": "public"
             }
@@ -12408,7 +12408,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "(host::|source::|sourcetype::)<string>"
+                "syntax": "(host|source|sourcetype)<string>"
             }
         },
         {
@@ -14336,7 +14336,7 @@
                 "optout-in": "lite, lite_free",
                 "related": "inputlookup, lookup, outputcsv, outputlookup",
                 "shortdesc": "Saves search results to the specified static lookup table.",
-                "syntax": "outputlookup (append=<bool>)? (create_empty=<bool>)? (override_if_empty=<bool>? (max=<int>)? (key_field=<field_name>)? (createinapp=<bool>)? (output_format=<string>) ? (<filename>|<string:tablename>)",
+                "syntax": "outputlookup (append=<bool>)? (create_empty=<bool>)? (override_if_empty=<bool>)? (max=<int>)? (key_field=<field_name>)? (createinapp=<bool>)? (output_format=<string>) ? (<filename>|<string:tablename>)",
                 "tags": "output csv save write lookup table",
                 "usage": "public"
             }
@@ -18907,7 +18907,7 @@
                 "example2": "- time, host",
                 "example3": "-size, +source",
                 "simplesyntax": "(\"-\"|\"+\")<sort-field> \",\"",
-                "syntax": "(\"-\"|\"+\")?( )?<sort-field> \",\"?"
+                "syntax": "(\"-\"|\"+\")?<sort-field> \",\""
             }
         },
         {
@@ -19052,7 +19052,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "source(=|!=)<string>"
+                "syntax": "source(==|!=)<string>"
             }
         },
         {
@@ -19094,7 +19094,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "sourcetype(=|!=)<string>"
+                "syntax": "sourcetype(==|!=)<string>"
             }
         },
         {
@@ -21555,7 +21555,7 @@
                 "eai:acl": null,
                 "eai:appName": "system",
                 "eai:userName": "nobody",
-                "syntax": "tag(=|!=)<field>::<string>",
+                "syntax": "tag(==|!=)<field><string>",
                 "usage": "internal"
             }
         },
@@ -22290,7 +22290,7 @@
                 "eai:userName": "nobody",
                 "example1": "10/1/2007:12:34:56",
                 "example2": "-5",
-                "syntax": "MM/DD/YYYY(:HH:MM:SS)?|<int>"
+                "syntax": "(\"MM/DD/YYYY(:HH:MM:SS)\")?|<int>"
             }
         },
         {
@@ -24381,7 +24381,7 @@
                 "eai:userName": "nobody",
                 "example1": "> 2.5",
                 "example2": "< 100",
-                "syntax": "(<|>)( )?<num>"
+                "syntax": "(\"<\"|\">\")<num>"
             }
         },
         {

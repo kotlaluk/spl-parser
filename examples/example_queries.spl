@@ -1,0 +1,56 @@
+| index=_internal sourcetype=scheduler result_count
+| extract pairdelim=",", kvdelim="=", auto=f
+| stats avg(result_count) min(result_count) max(result_count), sparkline avg(run_time) min(run_time) max(run_time) sum(run_time) AS hosts count AS execution_count by savedsearch_name, app
+| join savedsearch_name type=outer
+ [| rest /servicesNS/-/-/saved/searches
+ | fields title eai:acl.owner cron_schedule dispatch.earliest_time dispatch.latest_time search
+ | rename title AS savedsearch_name eai:acl.app AS App eai:acl.owner AS Owner cron_schedule AS "Cron Schedule" dispatch.earliest_time AS "DispatchEarliest Time" dispatch.latest_time AS "Dispatch Latest Time"]
+| rename savedsearch_name AS "Saved Search Name" search AS "SPL Query" app AS App
+| makemv delim="," values(host)
+| sort - avg(run_time)
+| table "Saved Search Name", App, Owner, "SPL Query", "Dispatch Earliest Time" "Dispatch Latest Time" "Cron Schedule" hosts, execution_count, sparkline, * (result_count), sum(run_time) *(run_time)
+
+index=_internal source=*license_usage.log type="Usage" splunk_server=*
+| eval Date=strftime(_time, "%Y/%m/%d")
+| stats sum(b) AS volume
+| eval MB=round(volume/1024/1024,5)
+| timechart first(MB) AS volume BY idx
+
+index=_audit splunk_server=local action=search (id=* OR search_id=*)
+| eval search_id = if(isnull(search_id), id, search_id)
+| replace '*' WITH * IN search_id
+| rex "search='search\s(?<search>.*?)',\sautojoin"
+| search search_id!=scheduler_*
+| eval user = if(user="n/a", null(), user)
+| stats min(_time) AS _time max(total_run_time) AS total_run_time first(search) AS search
+| search search!=*_internal* search!=*_audit*
+| chart sum(total_run_time) as "Total search time" count() AS "Search count" max(_time) AS "Last use" BY user
+| fieldformat "Last use" = strftime('Last use', "%F %T.%Q")
+
+index=_audit action=search sourcetype=audittrail search_id=* NOT (user=splunk-system-user) search!="'typeahead*"
+| rex "search\=\'(search|\s+)\s(?P<search>[\n\S\s]+?(?=\'))"
+| rex field=search "sourcetype\s*=\s*\"*(?<SourcetypeUsed>[^\s\"]+)"
+| rex field=search "index\s*=\s*\"*(?<IndexUsed>[^\s\"]+)"
+| stats dc(_time) AS Latest
+
+index=_* search=* user=* user!=- user!=splunk-system-user
+| rex field=search max_match=0 "index\s*=[\s\"]*(?<idx1>.*?)[\|\s\"\)]"
+| rex field=search max_match=0 "[\+\(|\+]index\%3D(?<idx2>.*?)[\+|\)\+]"
+| eval idx=if(isnull(idx1), idx2, idx1)
+| eval frequency=if(source="/opt/splunk/var/log/splunk/splunkd_access.log", "scheduled", "ad-hoc")
+| eval type=if(match(search, "summary*"), "summary", type1)
+| eval idx=if(isnull(idx), "NONE", idx)
+| eval end_type=if(frequency="ad-hoc", "ad-hoc", type)
+| rename end_type AS type
+| table _time frequency type source user idx search
+| bin _time span=1h
+| stats count() AS count by _time idx user frequency type search
+
+index=_introspection sourcetype=splunk_resource_usage component=PerProcess host=*
+| eval process = 'data.process'
+| eval process_class = case( process=="splunk-optimize","index service", process=="sh" OR process=="ksh" OR process=="bash" OR like(process,"python%") OR process=="powershell","scripted input", process=="mongod", "KVStore")
+| eval process_class = case( process=="splunkd" AND (like(args,"-p %start%") OR like(args,"service")),"splunkd server", process=="splunkd" AND isnotnull(sid),"search", process=="splunkd" AND (like(args,"fsck%") OR like(args,"recover-metadata%") OR like(args,"cluster_thing")),"index service", process=="splunkd" AND args=="instrument-resource-usage", "scripted input", (like(process,"python%") AND like(args,"%/appserver/mrsparkle/root.py%")) OR like(process,"splunkweb"),"Splunk Web", isnotnull(process_class), process_class)
+| eval process_class = if(isnull(process_class),"other",process_class)
+| stats latest(data.mem_used) AS resource_usage_dedup latest(process_class) AS process_class by data.pid, _time
+| stats sum(resource_usage_dedup) AS resource_usage
+| timechart minspan=10s min(resource_usage) AS "Resource Usage" BY process_class
