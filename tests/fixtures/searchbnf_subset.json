@@ -1,0 +1,201 @@
+{
+    "links": {
+        "create": "/servicesNS/nobody/system/configs/conf-searchbnf/_new",
+        "_reload": "/servicesNS/nobody/system/configs/conf-searchbnf/_reload",
+        "_acl": "/servicesNS/nobody/system/configs/conf-searchbnf/_acl"
+    },
+    "origin": "https://localhost:8089/servicesNS/nobody/system/configs/conf-searchbnf",
+    "updated": "2019-12-05T22:15:09+01:00",
+    "generator": {
+        "build": "c60db69f8e32",
+        "version": "7.3.2"
+    },
+    "entry": [
+        {
+            "name": "abstract-command",
+            "id": "https://localhost:8089/servicesNS/nobody/system/configs/conf-searchbnf/abstract-command",
+            "updated": "1970-01-01T01:00:00+01:00",
+            "links": {
+                "alternate": "/servicesNS/nobody/system/configs/conf-searchbnf/abstract-command",
+                "list": "/servicesNS/nobody/system/configs/conf-searchbnf/abstract-command",
+                "_reload": "/servicesNS/nobody/system/configs/conf-searchbnf/abstract-command/_reload",
+                "edit": "/servicesNS/nobody/system/configs/conf-searchbnf/abstract-command",
+                "disable": "/servicesNS/nobody/system/configs/conf-searchbnf/abstract-command/disable"
+            },
+            "author": "nobody",
+            "acl": {
+                "app": "system",
+                "can_change_perms": true,
+                "can_list": true,
+                "can_share_app": true,
+                "can_share_global": true,
+                "can_share_user": false,
+                "can_write": true,
+                "modifiable": true,
+                "owner": "nobody",
+                "perms": {
+                    "read": [
+                        "*"
+                    ],
+                    "write": [
+                        "admin"
+                    ]
+                },
+                "removable": false,
+                "sharing": "system"
+            },
+            "content": {
+                "alias": "excerpt",
+                "appears-in": "3.0",
+                "category": "formatting",
+                "commentcheat": "Show a summary of up to 5 lines for each search result.",
+                "description": "Produce an abstract -- a summary or brief representation -- of the text of search results.  The original text is replaced by the summary, which is produced by a scoring mechanism.  If the event is larger than the selected maxlines, those with more terms and more terms on adjacent lines are preferred over those with fewer terms.  If a line has a search term, its neighboring lines also partially match, and may be returned to provide context. When there are gaps between the selected lines, lines are prefixed with \"...\". \\p\\\n            If the text of a result has fewer lines or an equal number of lines to maxlines, no change will occur.\\i\\\n            * <maxlines> accepts values from 1 - 500. \\i\\\n            * <maxterms> accepts values from 1 - 1000.",
+                "disabled": false,
+                "eai:acl": null,
+                "eai:appName": "system",
+                "eai:userName": "nobody",
+                "examplecheat": "... |abstract maxlines=5",
+                "maintainer": "david",
+                "related": "highlight",
+                "shortdesc": "Shortens the text of results to a brief summary representation.",
+                "syntax": "abstract (maxterms=<int>)? (maxlines=<int>)?",
+                "tags": "condense summarize summary outline pare prune shorten skim snip sum trim",
+                "usage": "public"
+            }
+        },
+        {
+            "name": "eval-command",
+            "id": "https://localhost:8089/servicesNS/nobody/system/configs/conf-searchbnf/eval-command",
+            "updated": "1970-01-01T01:00:00+01:00",
+            "links": {
+                "alternate": "/servicesNS/nobody/system/configs/conf-searchbnf/eval-command",
+                "list": "/servicesNS/nobody/system/configs/conf-searchbnf/eval-command",
+                "_reload": "/servicesNS/nobody/system/configs/conf-searchbnf/eval-command/_reload",
+                "edit": "/servicesNS/nobody/system/configs/conf-searchbnf/eval-command",
+                "disable": "/servicesNS/nobody/system/configs/conf-searchbnf/eval-command/disable"
+            },
+            "author": "nobody",
+            "acl": {
+                "app": "system",
+                "can_change_perms": true,
+                "can_list": true,
+                "can_share_app": true,
+                "can_share_global": true,
+                "can_share_user": false,
+                "can_write": true,
+                "modifiable": true,
+                "owner": "nobody",
+                "perms": {
+                    "read": [
+                        "*"
+                    ],
+                    "write": [
+                        "admin"
+                    ]
+                },
+                "removable": false,
+                "sharing": "system"
+            },
+            "content": {
+                "appears-in": "Madonna",
+                "category": "fields::add",
+                "comment1": "Set full_name to the concatenation of first_name, a space, and last_name.\n Lowercase full_name. An example of multiple eval expressions, separated by a comma.",
+                "comment2": "Set sum_of_areas to be the sum of the areas of two circles",
+                "comment3": "Set status to some simple http error codes.",
+                "comment4": "Set status to OK if error is 200; otherwise, Error.",
+                "comment5": "Set lowuser to the lowercase version of username.",
+                "commentcheat": "Set velocity to distance / time.",
+                "description": "Performs an arbitrary expression evaluation, providing mathematical, string, and boolean operations. The results of eval are written to a specified destination field, which can be a new or existing field. If the destination field exists, the values of the field are replaced by the results of eval. The syntax of the expression is checked before running the search, and an exception will be thrown for an invalid expression. For example, the result of an eval statement is not allowed to be boolean. If search time evaluation of the expression is unsuccessful for a given event, eval erases the value in the result field.",
+                "disabled": false,
+                "eai:acl": null,
+                "eai:appName": "system",
+                "eai:userName": "nobody",
+                "example1": "... | eval full_name = first_name.\" \".last_name, low_name = lower(full_name)",
+                "example2": "... | eval sum_of_areas = pi() * pow(radius_a, 2) + pi() * pow(radius_b, 2)",
+                "example3": "... | eval error_msg = case(error == 404, \"Not found\", error == 500, \"Internal Server Error\", error == 200, \"OK\")",
+                "example4": "... | eval status = if(error == 200, \"OK\", \"Error\")",
+                "example5": "... | eval lowuser =  lower(username)",
+                "examplecheat": "... | eval velocity=distance/time",
+                "maintainer": "marquardt",
+                "related": "where",
+                "shortdesc": "Calculates an expression and puts the resulting value into a field. You can specify to calculate more than one expression.",
+                "syntax": "eval <eval-field>=<eval-expression> (\",\" <eval-field>=<eval-expression>)*",
+                "tags": "evaluate math string bool formula calculate compute abs case cidrmatch coalesce commands exact exp floor if ifnull isbool isint isnotnull isnull isnum isstr len like ln log lower match max md5 min mvappend mvcount mvindex mvfilter mvjoin mvmap mvsort mvdedup now null nullif pi pow random relative_time replace round searchmatch sigfig split sqrt strftime strptime substr time tostring trim ltrim rtrim typeof upper urldecode validate",
+                "usage": "public"
+            }
+        },
+        {
+            "name": "stats-command",
+            "id": "https://localhost:8089/servicesNS/nobody/system/configs/conf-searchbnf/stats-command",
+            "updated": "1970-01-01T01:00:00+01:00",
+            "links": {
+                "alternate": "/servicesNS/nobody/system/configs/conf-searchbnf/stats-command",
+                "list": "/servicesNS/nobody/system/configs/conf-searchbnf/stats-command",
+                "_reload": "/servicesNS/nobody/system/configs/conf-searchbnf/stats-command/_reload",
+                "edit": "/servicesNS/nobody/system/configs/conf-searchbnf/stats-command",
+                "disable": "/servicesNS/nobody/system/configs/conf-searchbnf/stats-command/disable"
+            },
+            "author": "nobody",
+            "acl": {
+                "app": "system",
+                "can_change_perms": true,
+                "can_list": true,
+                "can_share_app": true,
+                "can_share_global": true,
+                "can_share_user": false,
+                "can_write": true,
+                "modifiable": true,
+                "owner": "nobody",
+                "perms": {
+                    "read": [
+                        "*"
+                    ],
+                    "write": [
+                        "admin"
+                    ]
+                },
+                "removable": false,
+                "sharing": "system"
+            },
+            "fields": {
+                "required": [],
+                "optional": [],
+                "wildcard": [
+                    ".*"
+                ]
+            },
+            "content": {
+                "appears-in": "3.0",
+                "category": "reporting",
+                "commentcheat1": "Remove duplicates of results with the same \"host\" value and return the total count of the remaining results.",
+                "commentcheat2": "Return the average for each hour, of any unique field that ends with the string \"lay\" (for example, delay, xdelay, relay, etc).",
+                "commentcheat3": "Search the access logs, and return the number of hits from the top 100 values of \"referer_domain\".",
+                "description": "Calculate aggregate statistics over the dataset, optionally grouped by a list of fields.\n              Aggregate statistics include: \\i\\\n                 * count, distinct count \\i\\\n                 * mean, median, mode \\i\\\n                 * min, max, range, percentiles \\i\\\n                 * standard deviation, variance \\i\\\n                 * sum \\i\\\n                 * earliest and latest occurrence \\i\\\n                 * first and last (according to input order into stats command) occurrence \\p\\\n              Similar to SQL aggregation. \n              If called without a by-clause, one row is produced, which represents the \n              aggregation over the entire incoming result set. If called with a \n              by-clause, one row is produced for each distinct value of the by-clause. \n              The 'partitions' option, if specified, allows stats to partition the \n              input data based on the split-by fields for multithreaded reduce. \n              The 'allnum' option, if true (default = false), computes numerical statistics on each \n              field if and only if all of the values of that field are numerical. \n              The 'delim' option is used to specify how the values in the 'list' or 'values' aggregation are delimited.  (default is a single space)\n              When called with the name \"prestats\", it will produce intermediate results (internal).",
+                "disabled": false,
+                "eai:acl": null,
+                "eai:appName": "system",
+                "eai:userName": "nobody",
+                "example1": "sourcetype=access* | stats avg(kbps) by host",
+                "example2": "sourcetype=access* | top limit=100 referer_domain | stats sum(count)",
+                "examplecheat1": "... | stats distinct_count(host)",
+                "examplecheat2": "... | stats avg(*lay) BY date_hour",
+                "examplecheat3": "sourcetype=access_combined | top limit=100 referer_domain | stats sum(count)",
+                "maintainer": "steveyz",
+                "note": "When called without any arguments, stats assumes the argument \"default(*)\".\n        This produces a table with the cross-product of aggregator and field as columns,\n        And a single row with the value of that aggregator applied to that field across all data.",
+                "related": "eventstats, rare, sistats, streamstats, top",
+                "shortdesc": "Provides statistics, grouped optionally by field.",
+                "simplesyntax": "stats (((c|count|dc|distinct_count|estdc|estdc_error|earliest|latest|avg|stdev|stdevp|var|varp|sum|min|max|mode|median|first|last|earliest|latest|percint|list|values|range) \"(\" <field> \")\") (as <field>)? )+ (by <field-list>)? (<dedup_splitvals>)?",
+                "supports-multivalue": "1",
+                "syntax": "stats <stats-command-arguments>",
+                "tags": "stats statistics event sparkline count dc mean avg stdev var min max mode median",
+                "usage": "public"
+            }
+        }
+    ],
+    "paging": {
+        "total": 1,
+        "perPage": 30,
+        "offset": 0
+    },
+    "messages": []
+}

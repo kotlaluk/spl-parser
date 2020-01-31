@@ -1,0 +1,24 @@
+[addtotals-command]
+syntax = addtotals (row=<bool>)? (col=<bool>)? (labelfield=<field>)? (label=<string>)? (fieldname=<field>)? <field-list>
+shortdesc = Computes the sum of all numeric fields for each result.
+description = If "row=t" (default if invoked as 'addtotals') for each result, computes the arithmetic sum of all\
+              numeric fields that match <field-list> (wildcarded field list).\
+              If list is empty all fields are considered.\
+              The sum is placed in the specified field or "Total" if none was specified.\
+              If "col=t" (default if invoked as 'addcoltotals'), adds a new result at the end that represents the sum of each field.\
+              LABELFIELD, if specified, is a field that will be added to this summary \
+              event with the value set by the 'label' option.
+comment1 = Compute the sums of the numeric fields of each results.
+example1 = ... | addtotals
+comment2 = Compute the sums of the numeric fields that match the given list, and save the sums in the field "sum".
+example2 = ... | addtotals fieldname=sum foobar* *baz*
+comment3 = Compute the sums of all the fields, and put the sums in a summary event called "change_name".
+example3 = ... | addtotals col=t labelfield=change_name label=ALL
+commentcheat = Calculate the sums of the numeric fields of each result, and put the sums in the field "sum".
+examplecheat = ... | addtotals fieldname=sum
+category = reporting
+appears-in = 3.0
+maintainer = steveyz
+usage = public
+related = stats
+tags = total add calculate sum

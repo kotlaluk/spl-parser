@@ -1,0 +1,34 @@
+?start: rule+
+rule: rule_definition "::=" COMMAND? expression?
+?expression: list | list "|" expression
+?list: term | term list | term_group | term_group list
+?term_group: ("(" expression ")" REPEAT_CHARS*)+ | ("[" expression "]" REPEAT_CHARS*)+
+?term: (operator | rule_name REPEAT_CHARS* | rule_name_ext REPEAT_CHARS* | key_value | range | optional_argument)+
+key_value: key "=" value
+key: argument | "(" argument_group ")" | rule_name | rule_name_ext
+argument_group: argument | argument_group "|" argument
+value: term | term_group
+range: rule_name ":" rule_name
+operator: operator_word | operator_symbol
+operator_word: OPERATOR_W
+?operator_symbol: OPERATOR_S | OPERATOR_S EQUAL_SIGN | EQUAL_SIGN EQUAL_SIGN
+rule_name: "<" RULE_NAME ">" 
+rule_name_ext: "<" RULE_NAME ":" /[\w-]+/ ">"
+rule_definition: "<" RULE_NAME ">"
+optional_argument: argument REPEAT_CHARS+
+argument: ARGUMENT
+
+COMMAND: /\w+/
+ARGUMENT: /\w+/
+OPERATOR_W: /\w+/
+OPERATOR_S: "+" | "-" | "." | "!" | "*" | "%" | "/" | "," | "\",\"" | "\\\"" | ";" | "$" | "@" | ESCAPED_STRING
+EQUAL_SIGN: "="
+RULE_NAME: /[\w-]+/
+COMMENT: /\?..*\?/
+REPEAT_CHARS: "?" | "*" | "+"
+
+%import common.ESCAPED_STRING
+%import common.WS
+%import common.NEWLINE
+
+%ignore WS
