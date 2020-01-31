@@ -1,3 +1,11 @@
+"""
+.. module:: cli
+
+Module cli defines functionality for the CLI part of spl_parser. The CLI
+interface defines two operating modes (generate/view). Both operating modes
+can be used with a remote Splunk server or with local files.
+"""
+
 import click
 import os
 import re
@@ -9,12 +17,40 @@ from spl_parser.exceptions import SplParserError
 
 
 def validate_file(ctx, params, file):
+    """Callback to validate provided local file.
+
+    Args:
+        ctx: context object obtained from click
+        params: parameter object obtained from click
+        file (str): name of the local file to validate
+
+    Raises:
+        click.BadParameter: if the provided file is of json, neither conf format
+
+    Returns:
+        str: the provided filename, if valid
+    """
     if not file.endswith(".json") and not file.endswith(".conf"):
         raise click.BadParameter(f'"{file}" does not seem to be a valid searchbnf file.')
     return file
 
 
 def validate_url(ctx, paarams, url):
+    """Callback to validate provided URL.
+
+    Performs validation of the URL towards a regular expresssion.
+
+    Args:
+        ctx: context object obtained from click
+        params: parameter object obtained from click
+        url (str): URL to validate
+
+    Raises:
+        click.BadParameter: if the provided URL has wrong format
+
+    Returns:
+        str: the provided URL, if valid
+    """
     regex = re.compile(
         r'^(?:http)s?://'
         r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'

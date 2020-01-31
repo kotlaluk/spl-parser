@@ -1,3 +1,9 @@
+"""
+.. module:: tmlanguage_generator
+
+Module defining functionality related to generating a TmLanguage grammar for SPL.
+"""
+
 from copy import deepcopy
 import json
 
@@ -10,7 +16,13 @@ OPERATOR_PLACEHOLDER = "<example_operator>"
 
 
 class TmLanguageGenerator:
+    """Class defining a TmLanguage generator."""
+
     def __init__(self, template_data):
+        """
+        Args:
+            template_data (str): contents of the file defining a tmLanguage template
+        """
         self.template = json.loads(template_data)
         self.__parse_template()
 
@@ -32,9 +44,30 @@ class TmLanguageGenerator:
         self.grammar = empty_template
 
     def generate_include(self, name, type):
+        """Generate "include" line for the grammar.
+
+        Args:
+            name (str): name of a term
+            type (str): type of the include, e.g. "commands"
+
+        Returns:
+            str: the generated "include" line
+        """
         return {"include": f"#{type}.{name}"}
 
     def generate_grammar_block(self, name, template_block, source, targets):
+        """Generate whole block for the grammar.
+
+        Generates a block that can be included in the grammar, based on the loaded
+        parts from the template. Performs replacement of the placeholders defined
+        in the gramars for the actual values
+
+        Args:
+            name (str): name of the command to work with
+            template_block (dict): a template grammar block to be used
+            source (str): a placeholder to be replaced
+            targets (list): the actual values for replacement
+        """
         targets = list(targets)
         block_str = json.dumps(template_block)
         if len(targets) > 1:
@@ -44,6 +77,15 @@ class TmLanguageGenerator:
         return json.loads(block_str)
 
     def add_command(self, spl_command):
+        """Add SPLCommand to the grammar.
+
+        Performs all necessary steps (generating, inserting) to include a whole
+        SPL command in the resulting grammar.
+
+        Args:
+            spl_command (SPLCommand): an SPL command to include
+        """
+
         # Generate grammar blocks from the command and insert them into the grammar
         command_aliases = [spl_command.name] + spl_command.aliases
         commands_block = self.generate_grammar_block(spl_command.name, self.commands_block,
@@ -74,5 +116,10 @@ class TmLanguageGenerator:
             self.grammar["repository"][f"operators.{spl_command.name}"] = operators_block
 
     def save_grammar(self, outfile):
+        """Save the generated grammar to the specified file.
+
+        Args:
+            outfile (str): name of the file to save the grammar into
+        """
         with open(outfile, "w") as f:
             f.write(json.dumps(self.grammar, indent=4))

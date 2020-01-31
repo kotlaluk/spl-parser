@@ -1,3 +1,11 @@
+"""
+.. module:: searchbnf_parser
+
+This module defines functions that allow to parse searchbnf definitions in
+various fomats (JSON/conf) into their Python representations for further
+operations.
+"""
+
 import configparser
 import json
 
@@ -7,6 +15,20 @@ from spl_parser.spl_objects import SPLCommand
 
 
 def parse_json(json_data, parts=list()):
+    """Parse searchbnf data in json format.
+
+    The provided searchbnf data in json is processed and parsed to return all
+    contained SPL terms. Optionally, only a subset of the file may be processed,
+    by specifying a list containing names of the terms to be processed.
+
+    Args:
+        json_data (dict): json data containing searchbnf definitions
+        parts (list, optional): names of parts to be processed. Defaults to\
+        empty list(), meaning all the data.
+
+    Returns:
+        dict: dictionary of SPLTerms objects
+    """
     spl_terms = dict()
 
     if parts:
@@ -25,6 +47,20 @@ def parse_json(json_data, parts=list()):
 
 
 def parse_conf(conf_file, parts=list()):
+    """Parse searchbnf.conf file.
+
+    The provided searchbnf.conf file is processed and parsed to return all
+    contained SPL terms. Optionally, only a subset of the file may be processed,
+    by specifying a list containing names of the sections to be processed.
+
+    Args:
+        conf_file (str): path to the searchbnf.conf file
+        parts (list, optional): names of parts to be processed. Defaults to\
+        empty list(), meaning the whole file.
+
+    Returns:
+        dict: dictionary of SPLTerms objects
+    """
     confparser = configparser.RawConfigParser(strict=False)
     confparser.read(conf_file)
     spl_terms = dict()
@@ -48,6 +84,20 @@ def parse_conf(conf_file, parts=list()):
 
 
 def parse_spl_term(name, data):
+    """Parse an SPL term from the pre-loaded data.
+
+    The provided data must have a dict-like format, representing a single
+    SPL term in a standard fomat found in searchbnf.conf or searchbnf.json files.
+    If the provided term is a command, an SPLCommand object is created instead
+    of SPLTerm.
+
+    Args:
+        name (str): name of the term to parse
+        data (dict): dict-like data representing a single SPL term
+
+    Returns:
+        SPLTerm: an initialized SPLTerm object
+    """
     syntax = data["syntax"]
 
     if name.endswith("-command"):

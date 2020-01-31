@@ -1,3 +1,12 @@
+"""
+.. module:: spl_resource
+
+Module spl_resource contains definition of the workflow for the main
+functionalities of the package - generating the grammar and viewing commands.
+These functionalities are performed on objects called SplResource. Based on the
+operation mode, a LocalSplResource, or a RemoteSplResource is used.
+"""
+
 import aiohttp
 import asyncio
 import configparser
@@ -14,13 +23,32 @@ from spl_parser.exceptions import CommandNotFoundError, ParsingError,\
 
 
 class SplResource:
+    """Base class defining SplResource"""
     def __init__(self):
         self.spl_terms = dict()
 
     def fetch_spl_terms(self, spl_terms=list()):
+        """Fetch information for SPL terms from the resource.
+
+        Args:
+            spl_terms (list, optional): names of SPL terms to be fetched.\
+                Defaults to empty list(), meaning all available resources.
+        """
         raise NotImplementedError()
 
     def view_command(self, command):
+        """View details about an SPL command.
+
+        Performs all necessary steps to fetch, process and view information
+        about the provided command. The command details and informational
+        messages are printed to terminal.
+
+        Args:
+            command (str): name of the command to view
+
+        Raises:
+            CommandNotFoundError: if the specified command was not found
+        """
         log_message("INFO", f"Fetching details about {command} command...")
         self.fetch_spl_terms([f"{command}-command"])
 
@@ -32,6 +60,15 @@ class SplResource:
             raise CommandNotFoundError(command)
 
     def generate_grammar(self, outfile):
+        """Generate a tmLanguage grammar for SPL.
+
+        Performs all necessary steps to fetch, process, build and generate
+        a tmLanguage grammar file for SPL. Informational messages are printed
+        to terminal during the generation process.
+
+        Args:
+            outfile (str): name of the file to save the generated grammar into
+        """
         log_message("INFO", f"Fetching all SPL terms...")
         self.fetch_spl_terms()
 
@@ -56,6 +93,7 @@ class SplResource:
 
 
 class LocalSplResource(SplResource):
+    """Class defining an SPL resource based on a local file."""
     def __init__(self, file):
         super().__init__()
         self.file = file
@@ -73,7 +111,14 @@ class LocalSplResource(SplResource):
 
 
 class RemoteSplResource(SplResource):
+    """Class defining an SPL resource based on a remote Splunk server."""
     def __init__(self, url, username, password):
+        """
+        Args:
+            url (str): URL of a remote Splunk server
+            username (str): username to authenticate to the remote Splunk server
+            password (str): password corresponding to the username
+        """
         super().__init__()
         self.url = url
         if self.url[-1] == "/":
@@ -83,6 +128,18 @@ class RemoteSplResource(SplResource):
         self.auth = aiohttp.BasicAuth(username, password)
 
     def build_url(self, term_name=None):
+        """Build a URL for the searchbnf file on the remote Splunk server.
+
+        If a term is specified, builds URL for the specific term, otherwise
+        builds URL for all terms.
+
+        Args:
+            term_name (str, optional): name of the term. Defaults to None\
+            (all terms).
+
+        Returns:
+            str: the build URL
+        """
         url = f"{self.url}/servicesNS/-/-/configs/conf-searchbnf"
         if term_name:
             return f"{url}/{term_name}/?count=0&output_mode=json"
@@ -92,6 +149,11 @@ class RemoteSplResource(SplResource):
         asyncio.run(self.async_fetch_spl_terms(spl_terms))
 
     async def async_fetch_spl_terms(self, spl_terms):
+        """Asynchronously fetch details about SPL terms.
+
+        Args:
+            spl_terms (list): SPL terms to retrieve
+        """
         self.session = aiohttp.ClientSession(headers=self.headers,
                             connector=aiohttp.TCPConnector(verify_ssl=False),
                             auth=self.auth, raise_for_status=True)
@@ -120,6 +182,11 @@ class RemoteSplResource(SplResource):
                 raise ConnectionError()
 
     async def async_fetch_spl_term(self, spl_term):
+        """Asynchronously fetch details about an SPL term.
+
+        Args:
+            spl_term (SPLTerm): SPL term to retrieve
+        """
         url = self.build_url(spl_term)
         try:
             json_data = await self.async_get(url)
@@ -133,5 +200,13 @@ class RemoteSplResource(SplResource):
                 raise e
 
     async def async_get(self, url):
+        """Perform asynchronous GET request.
+
+        Args:
+            url (str): URL to use
+
+        Returns:
+            dict: JSON data received as response
+        """
         async with self.session.get(url) as response:
             return await response.json()
