@@ -1,0 +1,43 @@
+{
+    "name": "spl-highlighter",
+    "displayName": "SPL Highlighter",
+    "description": "Syntax highlighting for Splunk Search Processing Language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.37.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Themes"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "spl",
+                "aliases": [
+                    "SPL",
+                    "spl"
+                ],
+                "extensions": [
+                    ".spl",
+                    ".splunk"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "spl",
+                "scopeName": "source.spl",
+                "path": "./syntaxes/spl.tmLanguage.json"
+            }
+        ],
+        "themes": [
+            {
+                "label": "SPL Theme",
+                "uiTheme": "vs",
+                "path": "./themes/spl-color-theme.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,5218 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "SPL",
+    "patterns": [
+        {
+            "include": "#commands"
+        }
+    ],
+    "repository": {
+        "commands": {
+            "patterns": [
+                {
+                    "include": "#commands.abstract"
+                },
+                {
+                    "include": "#commands.accum"
+                },
+                {
+                    "include": "#commands.addcoltotals"
+                },
+                {
+                    "include": "#commands.addinfo"
+                },
+                {
+                    "include": "#commands.addtotals"
+                },
+                {
+                    "include": "#commands.analyzefields"
+                },
+                {
+                    "include": "#commands.anomalies"
+                },
+                {
+                    "include": "#commands.anomalousvalue"
+                },
+                {
+                    "include": "#commands.anomalydetection"
+                },
+                {
+                    "include": "#commands.append"
+                },
+                {
+                    "include": "#commands.appendcols"
+                },
+                {
+                    "include": "#commands.appendpipe"
+                },
+                {
+                    "include": "#commands.arules"
+                },
+                {
+                    "include": "#commands.associate"
+                },
+                {
+                    "include": "#commands.audit"
+                },
+                {
+                    "include": "#commands.autoregress"
+                },
+                {
+                    "include": "#commands.bin"
+                },
+                {
+                    "include": "#commands.bucketdir"
+                },
+                {
+                    "include": "#commands.chart"
+                },
+                {
+                    "include": "#commands.cofilter"
+                },
+                {
+                    "include": "#commands.collapse"
+                },
+                {
+                    "include": "#commands.concurrency"
+                },
+                {
+                    "include": "#commands.contingency"
+                },
+                {
+                    "include": "#commands.convert"
+                },
+                {
+                    "include": "#commands.copyresults"
+                },
+                {
+                    "include": "#commands.correlate"
+                },
+                {
+                    "include": "#commands.createrss"
+                },
+                {
+                    "include": "#commands.datamodel"
+                },
+                {
+                    "include": "#commands.debug"
+                },
+                {
+                    "include": "#commands.dedup"
+                },
+                {
+                    "include": "#commands.delete"
+                },
+                {
+                    "include": "#commands.delta"
+                },
+                {
+                    "include": "#commands.diff"
+                },
+                {
+                    "include": "#commands.dispatch"
+                },
+                {
+                    "include": "#commands.editinfo"
+                },
+                {
+                    "include": "#commands.erex"
+                },
+                {
+                    "include": "#commands.eval"
+                },
+                {
+                    "include": "#commands.extract"
+                },
+                {
+                    "include": "#commands.fieldformat"
+                },
+                {
+                    "include": "#commands.fields"
+                },
+                {
+                    "include": "#commands.fieldsummary"
+                },
+                {
+                    "include": "#commands.file"
+                },
+                {
+                    "include": "#commands.findkeywords"
+                },
+                {
+                    "include": "#commands.filldown"
+                },
+                {
+                    "include": "#commands.fillnull"
+                },
+                {
+                    "include": "#commands.folderize"
+                },
+                {
+                    "include": "#commands.foreach"
+                },
+                {
+                    "include": "#commands.from"
+                },
+                {
+                    "include": "#commands.gauge"
+                },
+                {
+                    "include": "#commands.gentimes"
+                },
+                {
+                    "include": "#commands.geostats"
+                },
+                {
+                    "include": "#commands.geom"
+                },
+                {
+                    "include": "#commands.geomfilter"
+                },
+                {
+                    "include": "#commands.head"
+                },
+                {
+                    "include": "#commands.tail"
+                },
+                {
+                    "include": "#commands.reverse"
+                },
+                {
+                    "include": "#commands.history"
+                },
+                {
+                    "include": "#commands.dbinspect"
+                },
+                {
+                    "include": "#commands.iconify"
+                },
+                {
+                    "include": "#commands.inputcsv"
+                },
+                {
+                    "include": "#commands.inputlookup"
+                },
+                {
+                    "include": "#commands.internalinputcsv"
+                },
+                {
+                    "include": "#commands.join"
+                },
+                {
+                    "include": "#commands.selfjoin"
+                },
+                {
+                    "include": "#commands.kmeans"
+                },
+                {
+                    "include": "#commands.kvform"
+                },
+                {
+                    "include": "#commands.localize"
+                },
+                {
+                    "include": "#commands.localop"
+                },
+                {
+                    "include": "#commands.loadjob"
+                },
+                {
+                    "include": "#commands.lookup"
+                },
+                {
+                    "include": "#commands.makecontinuous"
+                },
+                {
+                    "include": "#commands.makeresults"
+                },
+                {
+                    "include": "#commands.map"
+                },
+                {
+                    "include": "#commands.multikv"
+                },
+                {
+                    "include": "#commands.multisearch"
+                },
+                {
+                    "include": "#commands.mvcombine"
+                },
+                {
+                    "include": "#commands.mvexpand"
+                },
+                {
+                    "include": "#commands.makemv"
+                },
+                {
+                    "include": "#commands.nomv"
+                },
+                {
+                    "include": "#commands.newseriesfilter"
+                },
+                {
+                    "include": "#commands.nokv"
+                },
+                {
+                    "include": "#commands.outlier"
+                },
+                {
+                    "include": "#commands.dump"
+                },
+                {
+                    "include": "#commands.outputcsv"
+                },
+                {
+                    "include": "#commands.outputlookup"
+                },
+                {
+                    "include": "#commands.outputraw"
+                },
+                {
+                    "include": "#commands.outputrawr"
+                },
+                {
+                    "include": "#commands.outputtext"
+                },
+                {
+                    "include": "#commands.overlap"
+                },
+                {
+                    "include": "#commands.pivot"
+                },
+                {
+                    "include": "#commands.predict"
+                },
+                {
+                    "include": "#commands.preview"
+                },
+                {
+                    "include": "#commands.rare"
+                },
+                {
+                    "include": "#commands.redistribute"
+                },
+                {
+                    "include": "#commands.regex"
+                },
+                {
+                    "include": "#commands.relevancy"
+                },
+                {
+                    "include": "#commands.rename"
+                },
+                {
+                    "include": "#commands.replace"
+                },
+                {
+                    "include": "#commands.rex"
+                },
+                {
+                    "include": "#commands.rtorder"
+                },
+                {
+                    "include": "#commands.select"
+                },
+                {
+                    "include": "#commands.script"
+                },
+                {
+                    "include": "#commands.savedsearch"
+                },
+                {
+                    "include": "#commands.sendalert"
+                },
+                {
+                    "include": "#commands.sendemail"
+                },
+                {
+                    "include": "#commands.setfields"
+                },
+                {
+                    "include": "#commands.spath"
+                },
+                {
+                    "include": "#commands.table"
+                },
+                {
+                    "include": "#commands.transpose"
+                },
+                {
+                    "include": "#commands.uniq"
+                },
+                {
+                    "include": "#commands.metasearch"
+                },
+                {
+                    "include": "#commands.search"
+                },
+                {
+                    "include": "#commands.set"
+                },
+                {
+                    "include": "#commands.cluster"
+                },
+                {
+                    "include": "#commands.shape"
+                },
+                {
+                    "include": "#commands.showargs"
+                },
+                {
+                    "include": "#commands.sort"
+                },
+                {
+                    "include": "#commands.collect"
+                },
+                {
+                    "include": "#commands.mcatalog"
+                },
+                {
+                    "include": "#commands.mcollect"
+                },
+                {
+                    "include": "#commands.meventcollect"
+                },
+                {
+                    "include": "#commands.mrollup"
+                },
+                {
+                    "include": "#commands.streamstats"
+                },
+                {
+                    "include": "#commands.eventstats"
+                },
+                {
+                    "include": "#commands.stats"
+                },
+                {
+                    "include": "#commands.strcat"
+                },
+                {
+                    "include": "#commands.streamedcsv"
+                },
+                {
+                    "include": "#commands.sistats"
+                },
+                {
+                    "include": "#commands.sitop"
+                },
+                {
+                    "include": "#commands.sirare"
+                },
+                {
+                    "include": "#commands.sichart"
+                },
+                {
+                    "include": "#commands.sitimechart"
+                },
+                {
+                    "include": "#commands.tags"
+                },
+                {
+                    "include": "#commands.tagcreate"
+                },
+                {
+                    "include": "#commands.tagdelete"
+                },
+                {
+                    "include": "#commands.tagset"
+                },
+                {
+                    "include": "#commands.trendline"
+                },
+                {
+                    "include": "#commands.timechart"
+                },
+                {
+                    "include": "#commands.timewrap"
+                },
+                {
+                    "include": "#commands.top"
+                },
+                {
+                    "include": "#commands.tscollect"
+                },
+                {
+                    "include": "#commands.mstats"
+                },
+                {
+                    "include": "#commands.tstats"
+                },
+                {
+                    "include": "#commands.transaction"
+                },
+                {
+                    "include": "#commands.typeahead"
+                },
+                {
+                    "include": "#commands.typelearner"
+                },
+                {
+                    "include": "#commands.typer"
+                },
+                {
+                    "include": "#commands.where"
+                },
+                {
+                    "include": "#commands.highlight"
+                },
+                {
+                    "include": "#commands.xyseries"
+                },
+                {
+                    "include": "#commands.untable"
+                },
+                {
+                    "include": "#commands.rest"
+                },
+                {
+                    "include": "#commands.surrounding"
+                },
+                {
+                    "include": "#commands.xmlkv"
+                },
+                {
+                    "include": "#commands.xmlunescape"
+                },
+                {
+                    "include": "#commands.xpath"
+                },
+                {
+                    "include": "#commands.iplocation"
+                },
+                {
+                    "include": "#commands.rangemap"
+                },
+                {
+                    "include": "#commands.rawstats"
+                },
+                {
+                    "include": "#commands.reltime"
+                },
+                {
+                    "include": "#commands.scrub"
+                },
+                {
+                    "include": "#commands.metadata"
+                },
+                {
+                    "include": "#commands.eventcount"
+                },
+                {
+                    "include": "#commands.findtypes"
+                },
+                {
+                    "include": "#commands.return"
+                },
+                {
+                    "include": "#commands.runshellscript"
+                },
+                {
+                    "include": "#commands.searchtxn"
+                },
+                {
+                    "include": "#commands.walklex"
+                },
+                {
+                    "include": "#commands.msearch"
+                },
+                {
+                    "include": "#commands.x11"
+                },
+                {
+                    "include": "#commands.union"
+                },
+                {
+                    "include": "#commands.dfsjob"
+                },
+                {
+                    "include": "#commands.jsontxn"
+                }
+            ]
+        },
+        "commands.abstract": {
+            "begin": "(?<=\\[|\\|)\\s+(abstract|excerpt)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.abstract"
+                }
+            ]
+        },
+        "arguments.abstract": {
+            "patterns": [
+                {
+                    "match": "(maxterms|maxlines)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.accum": {
+            "begin": "(?<=\\[|\\|)\\s+(accum)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#operators.accum"
+                }
+            ]
+        },
+        "operators.accum": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(AS)\\b"
+        },
+        "commands.addcoltotals": {
+            "begin": "(?<=\\[|\\|)\\s+(addcoltotals)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.addcoltotals"
+                }
+            ]
+        },
+        "arguments.addcoltotals": {
+            "patterns": [
+                {
+                    "match": "(labelfield|label)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.addinfo": {
+            "begin": "(?<=\\[|\\|)\\s+(addinfo)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.addtotals": {
+            "begin": "(?<=\\[|\\|)\\s+(addtotals)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.addtotals"
+                }
+            ]
+        },
+        "arguments.addtotals": {
+            "patterns": [
+                {
+                    "match": "(fieldname|col|label|labelfield|row)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.analyzefields": {
+            "begin": "(?<=\\[|\\|)\\s+(analyzefields|af)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.analyzefields"
+                }
+            ]
+        },
+        "arguments.analyzefields": {
+            "patterns": [
+                {
+                    "match": "(classfield)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.anomalies": {
+            "begin": "(?<=\\[|\\|)\\s+(anomalies)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.anomalies"
+                }
+            ]
+        },
+        "arguments.anomalies": {
+            "patterns": [
+                {
+                    "match": "(blacklistthreshold|threshold|labelonly|blacklist|maxvalues|field|normalize)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.anomalousvalue": {
+            "begin": "(?<=\\[|\\|)\\s+(anomalousvalue)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.anomalousvalue"
+                },
+                {
+                    "include": "#functions.anomalousvalue"
+                },
+                {
+                    "include": "#operators.anomalousvalue"
+                }
+            ]
+        },
+        "arguments.anomalousvalue": {
+            "patterns": [
+                {
+                    "match": "(maxanofreq|minsupcount|minsupfreq|pthresh|minnormfreq|action)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.anomalousvalue": {
+            "match": "\\b(filter|summary|annotate)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.anomalousvalue": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(ANNOTATE|SUMMARY|FILTER)\\b"
+        },
+        "commands.anomalydetection": {
+            "begin": "(?<=\\[|\\|)\\s+(anomalydetection)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.anomalydetection"
+                },
+                {
+                    "include": "#functions.anomalydetection"
+                },
+                {
+                    "include": "#operators.anomalydetection"
+                }
+            ]
+        },
+        "arguments.anomalydetection": {
+            "patterns": [
+                {
+                    "match": "(action|method|cutoff|pthresh)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.anomalydetection": {
+            "match": "\\b(rm|iqr|transform|annotate|zscore|tf|remove|filter|summary|histogram)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.anomalydetection": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(FILTER|ANNOTATE|SUMMARY|HISTOGRAM|TRANSFORM|IQR|REMOVE|RM|ZSCORE|TF)\\b"
+        },
+        "commands.append": {
+            "begin": "(?<=\\[|\\|)\\s+(append)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.append"
+                }
+            ]
+        },
+        "arguments.append": {
+            "patterns": [
+                {
+                    "match": "(maxout|extendtimerange|timeout|maxtime)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.appendcols": {
+            "begin": "(?<=\\[|\\|)\\s+(appendcols)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.appendcols"
+                }
+            ]
+        },
+        "arguments.appendcols": {
+            "patterns": [
+                {
+                    "match": "(override|maxout|timeout|maxtime|extendtimerange)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.appendpipe": {
+            "begin": "(?<=\\[|\\|)\\s+(appendpipe)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.appendpipe"
+                }
+            ]
+        },
+        "arguments.appendpipe": {
+            "patterns": [
+                {
+                    "match": "(run_in_preview)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.arules": {
+            "begin": "(?<=\\[|\\|)\\s+(arules)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.arules"
+                }
+            ]
+        },
+        "arguments.arules": {
+            "patterns": [
+                {
+                    "match": "(conf|sup)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.associate": {
+            "begin": "(?<=\\[|\\|)\\s+(associate)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.associate"
+                }
+            ]
+        },
+        "arguments.associate": {
+            "patterns": [
+                {
+                    "match": "(improv|supcnt|supfreq)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.audit": {
+            "begin": "(?<=\\[|\\|)\\s+(audit)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.autoregress": {
+            "begin": "(?<=\\[|\\|)\\s+(autoregress|ar)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.autoregress"
+                },
+                {
+                    "include": "#operators.autoregress"
+                }
+            ]
+        },
+        "arguments.autoregress": {
+            "patterns": [
+                {
+                    "match": "(p)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "operators.autoregress": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(AS)\\b"
+        },
+        "commands.bin": {
+            "begin": "(?<=\\[|\\|)\\s+(bin|bucket|discretize)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.bin"
+                },
+                {
+                    "include": "#functions.bin"
+                },
+                {
+                    "include": "#operators.bin"
+                }
+            ]
+        },
+        "arguments.bin": {
+            "patterns": [
+                {
+                    "match": "(minspan|span|start|aligntime|bins|end)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.bin": {
+            "match": "\\b(earliest|day|quarter|sec|week|hr|month|year|latest|min|as|log)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.bin": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(WEEK|YEAR|QUARTER|AS|EARLIEST|DAY|MONTH|LOG|MIN|HR|LATEST|SEC)\\b"
+        },
+        "commands.bucketdir": {
+            "begin": "(?<=\\[|\\|)\\s+(bucketdir)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.bucketdir"
+                }
+            ]
+        },
+        "arguments.bucketdir": {
+            "patterns": [
+                {
+                    "match": "(countfield|sizefield|pathfield|sep|maxcount)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.chart": {
+            "begin": "(?<=\\[|\\|)\\s+(chart)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.chart"
+                },
+                {
+                    "include": "#functions.chart"
+                },
+                {
+                    "include": "#operators.chart"
+                }
+            ]
+        },
+        "arguments.chart": {
+            "patterns": [
+                {
+                    "match": "(minspan|span|dedup_splitvals|start|aligntime|agg|bins|otherstr|sep|usenull|nullstr|end|useother|cont|limit|format)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.chart": {
+            "match": "\\b(exact|split|count|sec|replace|hr|floor|ceiling|true|typeof|tanh|perc|isnotnull|var|earliest|random|ln|mvsort|sparkline|mvdedup|stdev|tan|exactperc|sqrt|spath|atan2|mvfilter|acosh|coalesce|varp|mvzip|asinh|week|notin|time|strptime|range|mvindex|distinct_count|abs|sum|log|top|isbool|max|commands|sin|in|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|stdevp|now|urldecode|p|cosh|tonumber|md5|case|dc|cidrmatch|lower|mean|like|c|isnull|false|upper|sha512|len|mvmap|as|sha1|bottom|atan|exp|match|quarter|month|avg|tostring|ltrim|hypot|year|round|latest|min|pow|isint|isnum|day|relative_time|sha256|sumsq|upperperc|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.chart": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|MEAN|STRFTIME|SPLIT|SINH|MVINDEX|MVCOUNT|COMMANDS|OVER|SHA512|MIN|P|HR|RTRIM|AS|ISNULL|MVDEDUP|TIME|FALSE|DC|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|IN|STRPTIME|C|ISSTR|EXACTPERC|CASE|RANDOM|MVZIP|UPPER|STDEVP|TRUE|MVFIND|TANH|COUNT|ISINT|DAY|UPPERPERC|CEIL|LOG|DISTINCT_COUNT|LEN|PERC|OR|NULLIF|TOP|SUMSQ|WEEK|CEILING|IFNULL|MVFILTER|ASIN|XOR|EARLIEST|ISBOOL|BY|MAX|REPLACE|MVAPPEND|ASINH|SEC|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|LATEST|BOTTOM|MVSORT|SUM|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|QUARTER|TAN|MONTH|EXACT|POW|VAR|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|YEAR|SIN|SPARKLINE|PI|AVG|TONUMBER|ABS|NOTIN|ACOSH|RANGE|LTRIM|STDEV|SHA256|FLOOR|MVMAP|LIKE|VARP|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.cofilter": {
+            "begin": "(?<=\\[|\\|)\\s+(cofilter)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.cofilter"
+                },
+                {
+                    "include": "#operators.cofilter"
+                }
+            ]
+        },
+        "functions.cofilter": {
+            "match": "\\b(field1|field2)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.cofilter": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(FIELD1|FIELD2)\\b"
+        },
+        "commands.collapse": {
+            "begin": "(?<=\\[|\\|)\\s+(collapse)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.collapse"
+                }
+            ]
+        },
+        "arguments.collapse": {
+            "patterns": [
+                {
+                    "match": "(chunksize|force)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.concurrency": {
+            "begin": "(?<=\\[|\\|)\\s+(concurrency)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.concurrency"
+                }
+            ]
+        },
+        "arguments.concurrency": {
+            "patterns": [
+                {
+                    "match": "(start|output|duration)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.contingency": {
+            "begin": "(?<=\\[|\\|)\\s+(contingency|counttable|ctable)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.contingency"
+                }
+            ]
+        },
+        "arguments.contingency": {
+            "patterns": [
+                {
+                    "match": "(maxrows|usetotal|totalstr|minrowcover|mincolcover|maxcols)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.convert": {
+            "begin": "(?<=\\[|\\|)\\s+(convert)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.convert"
+                },
+                {
+                    "include": "#functions.convert"
+                },
+                {
+                    "include": "#operators.convert"
+                }
+            ]
+        },
+        "arguments.convert": {
+            "patterns": [
+                {
+                    "match": "(timeformat)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.convert": {
+            "match": "\\b(as)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.convert": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(AS)\\b"
+        },
+        "commands.copyresults": {
+            "begin": "(?<=\\[|\\|)\\s+(copyresults)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.copyresults"
+                }
+            ]
+        },
+        "arguments.copyresults": {
+            "patterns": [
+                {
+                    "match": "(sid|dest)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.correlate": {
+            "begin": "(?<=\\[|\\|)\\s+(correlate)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.createrss": {
+            "begin": "(?<=\\[|\\|)\\s+(createrss)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.createrss"
+                }
+            ]
+        },
+        "arguments.createrss": {
+            "patterns": [
+                {
+                    "match": "(link|count|descr|path|graceful|name)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.datamodel": {
+            "begin": "(?<=\\[|\\|)\\s+(datamodel)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.datamodel"
+                },
+                {
+                    "include": "#functions.datamodel"
+                },
+                {
+                    "include": "#operators.datamodel"
+                }
+            ]
+        },
+        "arguments.datamodel": {
+            "patterns": [
+                {
+                    "match": "(allow_old_summaries|strict_fields|summariesonly)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.datamodel": {
+            "match": "\\b(search|search_string|acceleration_search_string|flat_string|flat|acceleration_search)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.datamodel": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(SEARCH_STRING|SEARCH|FLAT_STRING|ACCELERATION_SEARCH|FLAT|ACCELERATION_SEARCH_STRING)\\b"
+        },
+        "commands.debug": {
+            "begin": "(?<=\\[|\\|)\\s+(debug)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.debug"
+                },
+                {
+                    "include": "#functions.debug"
+                },
+                {
+                    "include": "#operators.debug"
+                }
+            ]
+        },
+        "arguments.debug": {
+            "patterns": [
+                {
+                    "match": "(param2|cmd|param1)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.debug": {
+            "match": "\\b(delete|roll|rescan|logchange|validate|optimize|sleep|sync)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.debug": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(VALIDATE|SLEEP|LOGCHANGE|SYNC|RESCAN|DELETE|ROLL|OPTIMIZE)\\b"
+        },
+        "commands.dedup": {
+            "begin": "(?<=\\[|\\|)\\s+(dedup)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.dedup"
+                },
+                {
+                    "include": "#functions.dedup"
+                },
+                {
+                    "include": "#operators.dedup"
+                }
+            ]
+        },
+        "arguments.dedup": {
+            "patterns": [
+                {
+                    "match": "(keepevents|keepempty|consecutive)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.dedup": {
+            "match": "\\b(str|sortby|auto|num|ip)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.dedup": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NUM|SORTBY|AUTO|STR|IP)\\b"
+        },
+        "commands.delete": {
+            "begin": "(?<=\\[|\\|)\\s+(delete)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.delta": {
+            "begin": "(?<=\\[|\\|)\\s+(delta)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.delta"
+                },
+                {
+                    "include": "#functions.delta"
+                },
+                {
+                    "include": "#operators.delta"
+                }
+            ]
+        },
+        "arguments.delta": {
+            "patterns": [
+                {
+                    "match": "(p)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.delta": {
+            "match": "\\b(as)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.delta": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(AS)\\b"
+        },
+        "commands.diff": {
+            "begin": "(?<=\\[|\\|)\\s+(diff)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.diff"
+                }
+            ]
+        },
+        "arguments.diff": {
+            "patterns": [
+                {
+                    "match": "(diffheader|maxlen|position1|position2|context|attribute)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.dispatch": {
+            "begin": "(?<=\\[|\\|)\\s+(dispatch)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.dispatch"
+                }
+            ]
+        },
+        "arguments.dispatch": {
+            "patterns": [
+                {
+                    "match": "(end_time|ttl|start_time|maxtime|maxresults|label|id|spawn_process)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.editinfo": {
+            "begin": "(?<=\\[|\\|)\\s+(editinfo)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.editinfo"
+                }
+            ]
+        },
+        "arguments.editinfo": {
+            "patterns": [
+                {
+                    "match": "(msg_debug|msg_warn|msg_error|starttime|endtime|keyset|msg_info)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.erex": {
+            "begin": "(?<=\\[|\\|)\\s+(erex)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.erex"
+                }
+            ]
+        },
+        "arguments.erex": {
+            "patterns": [
+                {
+                    "match": "(maxtrainers|counterexamples|fromfield|examples)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.eval": {
+            "begin": "(?<=\\[|\\|)\\s+(eval)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.eval"
+                },
+                {
+                    "include": "#operators.eval"
+                }
+            ]
+        },
+        "functions.eval": {
+            "match": "\\b(exact|split|replace|floor|ceiling|true|typeof|tanh|isnotnull|random|ln|mvsort|mvdedup|tan|sqrt|spath|atan2|mvfilter|acosh|coalesce|mvzip|asinh|time|strptime|mvindex|abs|log|isbool|commands|max|sin|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|now|urldecode|cosh|tonumber|md5|case|cidrmatch|lower|like|isnull|false|upper|sha512|len|mvmap|sha1|atan|exp|match|tostring|ltrim|hypot|round|min|pow|isint|isnum|relative_time|sha256|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.eval": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|STRFTIME|SPLIT|MVINDEX|SINH|MVCOUNT|COMMANDS|SHA512|MIN|RTRIM|ISNULL|MVDEDUP|TIME|FALSE|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|STRPTIME|ISSTR|CASE|RANDOM|MVZIP|UPPER|TRUE|MVFIND|TANH|ISINT|CEIL|LOG|LEN|OR|NULLIF|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|MAX|REPLACE|MVAPPEND|ASINH|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|MVSORT|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|TAN|EXACT|POW|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|SIN|PI|TONUMBER|ABS|ACOSH|LTRIM|SHA256|FLOOR|MVMAP|LIKE|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.extract": {
+            "begin": "(?<=\\[|\\|)\\s+(extract|kv)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.extract"
+                }
+            ]
+        },
+        "arguments.extract": {
+            "patterns": [
+                {
+                    "match": "(maxchars|pairdelim|segment|limit|kvdelim|mv_add|clean_keys|reload)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.fieldformat": {
+            "begin": "(?<=\\[|\\|)\\s+(fieldformat)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.fieldformat"
+                },
+                {
+                    "include": "#operators.fieldformat"
+                }
+            ]
+        },
+        "functions.fieldformat": {
+            "match": "\\b(exact|split|replace|floor|ceiling|true|typeof|tanh|isnotnull|random|ln|mvsort|mvdedup|tan|sqrt|spath|atan2|mvfilter|acosh|coalesce|mvzip|asinh|time|strptime|mvindex|abs|log|isbool|commands|max|sin|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|now|urldecode|cosh|tonumber|md5|case|cidrmatch|lower|like|isnull|false|upper|sha512|len|mvmap|sha1|atan|exp|match|tostring|ltrim|hypot|round|min|pow|isint|isnum|relative_time|sha256|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.fieldformat": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|STRFTIME|SPLIT|MVINDEX|SINH|MVCOUNT|COMMANDS|SHA512|MIN|RTRIM|ISNULL|MVDEDUP|TIME|FALSE|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|STRPTIME|ISSTR|CASE|RANDOM|MVZIP|UPPER|TRUE|MVFIND|TANH|ISINT|CEIL|LOG|LEN|OR|NULLIF|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|MAX|REPLACE|MVAPPEND|ASINH|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|MVSORT|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|TAN|EXACT|POW|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|SIN|PI|TONUMBER|ABS|ACOSH|LTRIM|SHA256|FLOOR|MVMAP|LIKE|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.fields": {
+            "begin": "(?<=\\[|\\|)\\s+(fields)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.fieldsummary": {
+            "begin": "(?<=\\[|\\|)\\s+(fieldsummary)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.fieldsummary"
+                }
+            ]
+        },
+        "arguments.fieldsummary": {
+            "patterns": [
+                {
+                    "match": "(maxvals)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.file": {
+            "begin": "(?<=\\[|\\|)\\s+(file|test)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.findkeywords": {
+            "begin": "(?<=\\[|\\|)\\s+(findkeywords)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.findkeywords"
+                }
+            ]
+        },
+        "arguments.findkeywords": {
+            "patterns": [
+                {
+                    "match": "(dedup|labelfield)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.filldown": {
+            "begin": "(?<=\\[|\\|)\\s+(filldown)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.fillnull": {
+            "begin": "(?<=\\[|\\|)\\s+(fillnull)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.fillnull"
+                }
+            ]
+        },
+        "arguments.fillnull": {
+            "patterns": [
+                {
+                    "match": "(value)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.folderize": {
+            "begin": "(?<=\\[|\\|)\\s+(folderize)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.folderize"
+                }
+            ]
+        },
+        "arguments.folderize": {
+            "patterns": [
+                {
+                    "match": "(size|minfolders|maxfolders|attr|sep)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.foreach": {
+            "begin": "(?<=\\[|\\|)\\s+(foreach)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.foreach"
+                }
+            ]
+        },
+        "arguments.foreach": {
+            "patterns": [
+                {
+                    "match": "(matchseg1|fieldstr|matchseg3|matchstr|matchseg2)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.from": {
+            "begin": "(?<=\\[|\\|)\\s+(from)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.from"
+                },
+                {
+                    "include": "#operators.from"
+                }
+            ]
+        },
+        "functions.from": {
+            "match": "\\b(datamodel|federated|inputlookup|savedsearch)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.from": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(INPUTLOOKUP|FEDERATED|SAVEDSEARCH|DATAMODEL)\\b"
+        },
+        "commands.gauge": {
+            "begin": "(?<=\\[|\\|)\\s+(gauge)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.gentimes": {
+            "begin": "(?<=\\[|\\|)\\s+(gentimes)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.gentimes"
+                },
+                {
+                    "include": "#functions.gentimes"
+                },
+                {
+                    "include": "#operators.gentimes"
+                }
+            ]
+        },
+        "arguments.gentimes": {
+            "patterns": [
+                {
+                    "match": "(start|end|increment)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.gentimes": {
+            "match": "\\b(s|m|h|d)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.gentimes": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(S|H|D|M)\\b"
+        },
+        "commands.geostats": {
+            "begin": "(?<=\\[|\\|)\\s+(geostats)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.geostats"
+                },
+                {
+                    "include": "#functions.geostats"
+                },
+                {
+                    "include": "#operators.geostats"
+                }
+            ]
+        },
+        "arguments.geostats": {
+            "patterns": [
+                {
+                    "match": "(translatetoxy|outputlongfield|locallimit|binspanlong|maxzoomlevel|outputlatfield|globallimit|latfield|binspanlat|longfield)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.geostats": {
+            "match": "\\b(exact|split|count|replace|floor|ceiling|true|typeof|tanh|perc|isnotnull|var|random|ln|mvsort|mvdedup|stdev|tan|exactperc|sqrt|spath|atan2|mvfilter|acosh|coalesce|varp|mvzip|asinh|time|strptime|distinct_count|mvindex|abs|log|isbool|commands|max|sin|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|stdevp|now|urldecode|p|cosh|tonumber|md5|case|dc|cidrmatch|lower|mean|like|c|isnull|false|upper|sha512|len|mvmap|as|sha1|atan|exp|match|avg|tostring|ltrim|hypot|round|min|pow|isint|isnum|relative_time|sha256|upperperc|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.geostats": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|MEAN|STRFTIME|SPLIT|SINH|MVINDEX|MVCOUNT|COMMANDS|SHA512|MIN|P|RTRIM|ISNULL|AS|MVDEDUP|TIME|FALSE|DC|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|STRPTIME|C|ISSTR|EXACTPERC|CASE|RANDOM|MVZIP|UPPER|STDEVP|TRUE|MVFIND|TANH|ISINT|COUNT|UPPERPERC|CEIL|LOG|DISTINCT_COUNT|LEN|PERC|OR|NULLIF|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|MAX|REPLACE|MVAPPEND|ASINH|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|MVSORT|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|TAN|EXACT|POW|VAR|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|SIN|PI|AVG|TONUMBER|ABS|ACOSH|LTRIM|STDEV|SHA256|FLOOR|MVMAP|LIKE|VARP|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.geom": {
+            "begin": "(?<=\\[|\\|)\\s+(geom)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.geom"
+                }
+            ]
+        },
+        "arguments.geom": {
+            "patterns": [
+                {
+                    "match": "(featureIdField|gen|min_y|max_y|min_x|max_x|allFeatures)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.geomfilter": {
+            "begin": "(?<=\\[|\\|)\\s+(geomfilter)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.geomfilter"
+                }
+            ]
+        },
+        "arguments.geomfilter": {
+            "patterns": [
+                {
+                    "match": "(max_y|max_x|min_x|min_y)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.head": {
+            "begin": "(?<=\\[|\\|)\\s+(head)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.head"
+                },
+                {
+                    "include": "#functions.head"
+                },
+                {
+                    "include": "#operators.head"
+                }
+            ]
+        },
+        "arguments.head": {
+            "patterns": [
+                {
+                    "match": "(keeplast|limit|null)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.head": {
+            "match": "\\b(exact|split|replace|floor|ceiling|true|typeof|tanh|isnotnull|random|ln|mvsort|mvdedup|tan|sqrt|spath|atan2|mvfilter|acosh|coalesce|mvzip|asinh|time|strptime|mvindex|abs|log|isbool|commands|max|sin|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|now|urldecode|cosh|tonumber|md5|case|cidrmatch|lower|like|isnull|false|upper|sha512|len|mvmap|sha1|atan|exp|match|tostring|ltrim|hypot|round|min|pow|isint|isnum|relative_time|sha256|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.head": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|STRFTIME|SPLIT|MVINDEX|SINH|MVCOUNT|COMMANDS|SHA512|MIN|RTRIM|ISNULL|MVDEDUP|TIME|FALSE|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|STRPTIME|ISSTR|CASE|RANDOM|MVZIP|UPPER|TRUE|MVFIND|TANH|ISINT|CEIL|LOG|LEN|OR|NULLIF|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|MAX|REPLACE|MVAPPEND|ASINH|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|MVSORT|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|TAN|EXACT|POW|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|SIN|PI|TONUMBER|ABS|ACOSH|LTRIM|SHA256|FLOOR|MVMAP|LIKE|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.tail": {
+            "begin": "(?<=\\[|\\|)\\s+(tail)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.reverse": {
+            "begin": "(?<=\\[|\\|)\\s+(reverse)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.history": {
+            "begin": "(?<=\\[|\\|)\\s+(history)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.history"
+                }
+            ]
+        },
+        "arguments.history": {
+            "patterns": [
+                {
+                    "match": "(events)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.dbinspect": {
+            "begin": "(?<=\\[|\\|)\\s+(dbinspect)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.dbinspect"
+                },
+                {
+                    "include": "#functions.dbinspect"
+                },
+                {
+                    "include": "#operators.dbinspect"
+                }
+            ]
+        },
+        "arguments.dbinspect": {
+            "patterns": [
+                {
+                    "match": "(timeformat|corruptonly|span|index)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.dbinspect": {
+            "match": "\\b(day|quarter|sec|week|hr|month|year|min|log)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.dbinspect": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(WEEK|YEAR|QUARTER|DAY|MONTH|LOG|MIN|HR|SEC)\\b"
+        },
+        "commands.iconify": {
+            "begin": "(?<=\\[|\\|)\\s+(iconify)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.inputcsv": {
+            "begin": "(?<=\\[|\\|)\\s+(inputcsv)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.inputcsv"
+                },
+                {
+                    "include": "#operators.inputcsv"
+                }
+            ]
+        },
+        "arguments.inputcsv": {
+            "patterns": [
+                {
+                    "match": "(max|dispatch|append|events|start)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "operators.inputcsv": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(WHERE)\\b"
+        },
+        "commands.inputlookup": {
+            "begin": "(?<=\\[|\\|)\\s+(inputlookup)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.inputlookup"
+                },
+                {
+                    "include": "#functions.inputlookup"
+                },
+                {
+                    "include": "#operators.inputlookup"
+                }
+            ]
+        },
+        "arguments.inputlookup": {
+            "patterns": [
+                {
+                    "match": "(start|max|append)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.inputlookup": {
+            "match": "\\b(where)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.inputlookup": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(WHERE)\\b"
+        },
+        "commands.internalinputcsv": {
+            "begin": "(?<=\\[|\\|)\\s+(internalinputcsv)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.join": {
+            "begin": "(?<=\\[|\\|)\\s+(join)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.join"
+                },
+                {
+                    "include": "#functions.join"
+                },
+                {
+                    "include": "#operators.join"
+                }
+            ]
+        },
+        "arguments.join": {
+            "patterns": [
+                {
+                    "match": "(right|left|usetime|max|overwrite|type|earlier)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.join": {
+            "match": "\\b(datamodel|left|inner|federated|outer|inputlookup|savedsearch)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.join": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(WHERE|INPUTLOOKUP|FEDERATED|SAVEDSEARCH|DATAMODEL|OUTER|INNER|LEFT)\\b"
+        },
+        "commands.selfjoin": {
+            "begin": "(?<=\\[|\\|)\\s+(selfjoin)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.selfjoin"
+                }
+            ]
+        },
+        "arguments.selfjoin": {
+            "patterns": [
+                {
+                    "match": "(keepsingle|max|overwrite)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.kmeans": {
+            "begin": "(?<=\\[|\\|)\\s+(kmeans)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.kmeans"
+                },
+                {
+                    "include": "#functions.kmeans"
+                },
+                {
+                    "include": "#operators.kmeans"
+                }
+            ]
+        },
+        "arguments.kmeans": {
+            "patterns": [
+                {
+                    "match": "(showcentroid|maxiters|k|dt|t|cfield|reps)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.kmeans": {
+            "match": "\\b(cb|cityblock|l1|cosine|sqeuclidean|sq|l1norm|l2norm|l2|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.kmeans": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(COS|CB|L2|COSINE|L1|CITYBLOCK|L2NORM|SQEUCLIDEAN|L1NORM|SQ)\\b"
+        },
+        "commands.kvform": {
+            "begin": "(?<=\\[|\\|)\\s+(kvform)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.kvform"
+                }
+            ]
+        },
+        "arguments.kvform": {
+            "patterns": [
+                {
+                    "match": "(field|form)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.localize": {
+            "begin": "(?<=\\[|\\|)\\s+(localize)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.localize"
+                },
+                {
+                    "include": "#functions.localize"
+                },
+                {
+                    "include": "#operators.localize"
+                }
+            ]
+        },
+        "arguments.localize": {
+            "patterns": [
+                {
+                    "match": "(timeafter|maxpause|timebefore)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.localize": {
+            "match": "\\b(m|s|d|h)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.localize": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(H|S|D|M)\\b"
+        },
+        "commands.localop": {
+            "begin": "(?<=\\[|\\|)\\s+(localop)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.loadjob": {
+            "begin": "(?<=\\[|\\|)\\s+(loadjob)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.loadjob"
+                }
+            ]
+        },
+        "arguments.loadjob": {
+            "patterns": [
+                {
+                    "match": "(ignore_running|events|artifact_offset|savedsearch|job_delegate)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.lookup": {
+            "begin": "(?<=\\[|\\|)\\s+(lookup)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.lookup"
+                },
+                {
+                    "include": "#functions.lookup"
+                },
+                {
+                    "include": "#operators.lookup"
+                }
+            ]
+        },
+        "arguments.lookup": {
+            "patterns": [
+                {
+                    "match": "(update|local|event_time_field)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.lookup": {
+            "match": "\\b(as)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.lookup": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(OUTPUTNEW|OUTPUT|AS)\\b"
+        },
+        "commands.makecontinuous": {
+            "begin": "(?<=\\[|\\|)\\s+(makecontinuous)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.makecontinuous"
+                },
+                {
+                    "include": "#functions.makecontinuous"
+                },
+                {
+                    "include": "#operators.makecontinuous"
+                }
+            ]
+        },
+        "arguments.makecontinuous": {
+            "patterns": [
+                {
+                    "match": "(minspan|span|start|aligntime|bins|end)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.makecontinuous": {
+            "match": "\\b(earliest|day|quarter|sec|week|hr|month|year|latest|min|log)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.makecontinuous": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(WEEK|YEAR|QUARTER|DAY|MONTH|EARLIEST|LOG|MIN|HR|LATEST|SEC)\\b"
+        },
+        "commands.makeresults": {
+            "begin": "(?<=\\[|\\|)\\s+(makeresults)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.makeresults"
+                }
+            ]
+        },
+        "arguments.makeresults": {
+            "patterns": [
+                {
+                    "match": "(splunk_server_group|count|splunk_server|annotate)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.map": {
+            "begin": "(?<=\\[|\\|)\\s+(map)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.map"
+                }
+            ]
+        },
+        "arguments.map": {
+            "patterns": [
+                {
+                    "match": "(maxsearches|search)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.multikv": {
+            "begin": "(?<=\\[|\\|)\\s+(multikv)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.multikv"
+                }
+            ]
+        },
+        "arguments.multikv": {
+            "patterns": [
+                {
+                    "match": "(conf|multitable|noheader|forceheader|copyattrs|rmorig)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.multisearch": {
+            "begin": "(?<=\\[|\\|)\\s+(multisearch)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.mvcombine": {
+            "begin": "(?<=\\[|\\|)\\s+(mvcombine)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.mvcombine"
+                }
+            ]
+        },
+        "arguments.mvcombine": {
+            "patterns": [
+                {
+                    "match": "(delim)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.mvexpand": {
+            "begin": "(?<=\\[|\\|)\\s+(mvexpand)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.mvexpand"
+                }
+            ]
+        },
+        "arguments.mvexpand": {
+            "patterns": [
+                {
+                    "match": "(limit)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.makemv": {
+            "begin": "(?<=\\[|\\|)\\s+(makemv)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.makemv"
+                }
+            ]
+        },
+        "arguments.makemv": {
+            "patterns": [
+                {
+                    "match": "(setsv|tokenizer|allowempty|delim)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.nomv": {
+            "begin": "(?<=\\[|\\|)\\s+(nomv)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.newseriesfilter": {
+            "begin": "(?<=\\[|\\|)\\s+(newseriesfilter)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.nokv": {
+            "begin": "(?<=\\[|\\|)\\s+(nokv)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.outlier": {
+            "begin": "(?<=\\[|\\|)\\s+(outlier|outlierfilter)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.outlier"
+                },
+                {
+                    "include": "#functions.outlier"
+                },
+                {
+                    "include": "#operators.outlier"
+                }
+            ]
+        },
+        "arguments.outlier": {
+            "patterns": [
+                {
+                    "match": "(action|uselower|mark|param)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.outlier": {
+            "match": "\\b(transform|tf|rm|remove)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.outlier": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(TF|TRANSFORM|REMOVE|RM)\\b"
+        },
+        "commands.dump": {
+            "begin": "(?<=\\[|\\|)\\s+(dump)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.dump"
+                }
+            ]
+        },
+        "arguments.dump": {
+            "patterns": [
+                {
+                    "match": "(rollsize|basefilename|fields|compress|format)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.outputcsv": {
+            "begin": "(?<=\\[|\\|)\\s+(outputcsv)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.outputcsv"
+                }
+            ]
+        },
+        "arguments.outputcsv": {
+            "patterns": [
+                {
+                    "match": "(singlefile|override_if_empty|dispatch|append|usexml|create_empty)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.outputlookup": {
+            "begin": "(?<=\\[|\\|)\\s+(outputlookup)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.outputlookup"
+                }
+            ]
+        },
+        "arguments.outputlookup": {
+            "patterns": [
+                {
+                    "match": "(override_if_empty|max|append|createinapp|output_format|key_field|create_empty)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.outputraw": {
+            "begin": "(?<=\\[|\\|)\\s+(outputraw)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.outputrawr": {
+            "begin": "(?<=\\[|\\|)\\s+(outputrawr)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.outputtext": {
+            "begin": "(?<=\\[|\\|)\\s+(outputtext)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.outputtext"
+                }
+            ]
+        },
+        "arguments.outputtext": {
+            "patterns": [
+                {
+                    "match": "(usexml)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.overlap": {
+            "begin": "(?<=\\[|\\|)\\s+(overlap)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.pivot": {
+            "begin": "(?<=\\[|\\|)\\s+(pivot)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.predict": {
+            "begin": "(?<=\\[|\\|)\\s+(predict)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.predict"
+                },
+                {
+                    "include": "#operators.predict"
+                }
+            ]
+        },
+        "arguments.predict": {
+            "patterns": [
+                {
+                    "match": "(holdback|correlate|period|future_timespan|algorithm|suppress)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "operators.predict": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(LLP5|BILL|LLT|LL|LLP|LLB)\\b"
+        },
+        "commands.preview": {
+            "begin": "(?<=\\[|\\|)\\s+(preview)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.rare": {
+            "begin": "(?<=\\[|\\|)\\s+(rare)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.rare"
+                }
+            ]
+        },
+        "arguments.rare": {
+            "patterns": [
+                {
+                    "match": "(percentfield|showcount|useother|limit|countfield|showperc|otherstr)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.redistribute": {
+            "begin": "(?<=\\[|\\|)\\s+(redistribute)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.redistribute"
+                },
+                {
+                    "include": "#functions.redistribute"
+                },
+                {
+                    "include": "#operators.redistribute"
+                }
+            ]
+        },
+        "arguments.redistribute": {
+            "patterns": [
+                {
+                    "match": "(dfs|num_of_reducers)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.redistribute": {
+            "match": "\\b(true)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.redistribute": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(TRUE)\\b"
+        },
+        "commands.regex": {
+            "begin": "(?<=\\[|\\|)\\s+(regex)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.relevancy": {
+            "begin": "(?<=\\[|\\|)\\s+(relevancy)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.rename": {
+            "begin": "(?<=\\[|\\|)\\s+(rename)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.rename"
+                },
+                {
+                    "include": "#operators.rename"
+                }
+            ]
+        },
+        "functions.rename": {
+            "match": "\\b(as)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.rename": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(AS)\\b"
+        },
+        "commands.replace": {
+            "begin": "(?<=\\[|\\|)\\s+(replace)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.replace"
+                },
+                {
+                    "include": "#operators.replace"
+                }
+            ]
+        },
+        "functions.replace": {
+            "match": "\\b(in|with)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.replace": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(WITH|IN)\\b"
+        },
+        "commands.rex": {
+            "begin": "(?<=\\[|\\|)\\s+(rex)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.rex"
+                },
+                {
+                    "include": "#functions.rex"
+                },
+                {
+                    "include": "#operators.rex"
+                }
+            ]
+        },
+        "arguments.rex": {
+            "patterns": [
+                {
+                    "match": "(field|max_match|offset_field|mode)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.rex": {
+            "match": "\\b(sed)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.rex": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(SED)\\b"
+        },
+        "commands.rtorder": {
+            "begin": "(?<=\\[|\\|)\\s+(rtorder)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.rtorder"
+                },
+                {
+                    "include": "#functions.rtorder"
+                },
+                {
+                    "include": "#operators.rtorder"
+                }
+            ]
+        },
+        "arguments.rtorder": {
+            "patterns": [
+                {
+                    "match": "(discard|buffer_span|max_buffer_size)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.rtorder": {
+            "match": "\\b(day|quarter|sec|week|hr|month|year|min)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.rtorder": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(WEEK|YEAR|QUARTER|DAY|MONTH|MIN|HR|SEC)\\b"
+        },
+        "commands.select": {
+            "begin": "(?<=\\[|\\|)\\s+(select|report)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.script": {
+            "begin": "(?<=\\[|\\|)\\s+(script|run)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.script"
+                }
+            ]
+        },
+        "arguments.script": {
+            "patterns": [
+                {
+                    "match": "(maxinputs)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.savedsearch": {
+            "begin": "(?<=\\[|\\|)\\s+(savedsearch|macro|savedsplunk)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.savedsearch"
+                }
+            ]
+        },
+        "arguments.savedsearch": {
+            "patterns": [
+                {
+                    "match": "(nosubstitution)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.sendalert": {
+            "begin": "(?<=\\[|\\|)\\s+(sendalert)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.sendalert"
+                },
+                {
+                    "include": "#functions.sendalert"
+                },
+                {
+                    "include": "#operators.sendalert"
+                }
+            ]
+        },
+        "arguments.sendalert": {
+            "patterns": [
+                {
+                    "match": "(results_path|results_link)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.sendalert": {
+            "match": "\\b(param)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.sendalert": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(PARAM)\\b"
+        },
+        "commands.sendemail": {
+            "begin": "(?<=\\[|\\|)\\s+(sendemail)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.sendemail"
+                },
+                {
+                    "include": "#functions.sendemail"
+                },
+                {
+                    "include": "#operators.sendemail"
+                }
+            ]
+        },
+        "arguments.sendemail": {
+            "patterns": [
+                {
+                    "match": "(message|sendpdf|width_sort_columns|sendresults|footer|subject|pdfview|inline|graceful|content_type|format|maxinputs|use_ssl|paperorientation|priority|bcc|cc|to|use_tls|papersize|sendcsv|maxtime|server|from)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.sendemail": {
+            "match": "\\b(normal|h|ledger|csv|table|html|legal|m|a4|portrait|high|raw|highest|s|low|a5|letter|a3|lowest|landscape|a2|d|plain)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.sendemail": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(LOWEST|HIGH|A4|HTML|M|CSV|PLAIN|NORMAL|LANDSCAPE|TABLE|A5|A3|H|A2|RAW|S|D|HIGHEST|PORTRAIT|LETTER|LEDGER|LOW|LEGAL)\\b"
+        },
+        "commands.setfields": {
+            "begin": "(?<=\\[|\\|)\\s+(setfields)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.spath": {
+            "begin": "(?<=\\[|\\|)\\s+(spath)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.spath"
+                }
+            ]
+        },
+        "arguments.spath": {
+            "patterns": [
+                {
+                    "match": "(input|output|path)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.table": {
+            "begin": "(?<=\\[|\\|)\\s+(table)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.transpose": {
+            "begin": "(?<=\\[|\\|)\\s+(transpose)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.transpose"
+                }
+            ]
+        },
+        "arguments.transpose": {
+            "patterns": [
+                {
+                    "match": "(header_field|column_name|include_empty)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.uniq": {
+            "begin": "(?<=\\[|\\|)\\s+(uniq)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.metasearch": {
+            "begin": "(?<=\\[|\\|)\\s+(metasearch)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.metasearch"
+                },
+                {
+                    "include": "#operators.metasearch"
+                }
+            ]
+        },
+        "arguments.metasearch": {
+            "patterns": [
+                {
+                    "match": "(monthsago|endtimeu|savedsplunk|minutesago|daysago|hoursago|startmonthsago|starttime|searchtimespanminutes|endmonthsago|latest|startminutesago|earliest|searchtimespandays|starthoursago|_index_earliest|enddaysago|endminutesago|searchtimespanhours|startdaysago|_index_latest|timeformat|endhoursago|endtime|searchtimespanmonths|starttimeu|savedsearch)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "operators.metasearch": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(IN)\\b"
+        },
+        "commands.search": {
+            "begin": "(?<=\\[|\\|)\\s+(search)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.search"
+                },
+                {
+                    "include": "#operators.search"
+                }
+            ]
+        },
+        "arguments.search": {
+            "patterns": [
+                {
+                    "match": "(monthsago|endtimeu|savedsplunk|minutesago|daysago|hoursago|startmonthsago|starttime|searchtimespanminutes|endmonthsago|latest|startminutesago|earliest|searchtimespandays|starthoursago|_index_earliest|enddaysago|endminutesago|searchtimespanhours|startdaysago|_index_latest|timeformat|endhoursago|endtime|searchtimespanmonths|starttimeu|savedsearch)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "operators.search": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(IN)\\b"
+        },
+        "commands.set": {
+            "begin": "(?<=\\[|\\|)\\s+(set)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.set"
+                },
+                {
+                    "include": "#operators.set"
+                }
+            ]
+        },
+        "functions.set": {
+            "match": "\\b(diff|intersect|union)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.set": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(UNION|DIFF|INTERSECT)\\b"
+        },
+        "commands.cluster": {
+            "begin": "(?<=\\[|\\|)\\s+(cluster|slc)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.cluster"
+                },
+                {
+                    "include": "#functions.cluster"
+                },
+                {
+                    "include": "#operators.cluster"
+                }
+            ]
+        },
+        "arguments.cluster": {
+            "patterns": [
+                {
+                    "match": "(match|labelonly|t|field|delims|labelfield|showcount|countfield)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.cluster": {
+            "match": "\\b(termlist|termset|ngramset)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.cluster": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(TERMSET|NGRAMSET|TERMLIST)\\b"
+        },
+        "commands.shape": {
+            "begin": "(?<=\\[|\\|)\\s+(shape)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.shape"
+                }
+            ]
+        },
+        "arguments.shape": {
+            "patterns": [
+                {
+                    "match": "(maxvalues|maxresolution)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.showargs": {
+            "begin": "(?<=\\[|\\|)\\s+(showargs)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.sort": {
+            "begin": "(?<=\\[|\\|)\\s+(sort)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.sort"
+                },
+                {
+                    "include": "#operators.sort"
+                }
+            ]
+        },
+        "functions.sort": {
+            "match": "\\b(str|d|num|desc|auto|ip)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.sort": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NUM|IP|AUTO|STR|D|DESC)\\b"
+        },
+        "commands.collect": {
+            "begin": "(?<=\\[|\\|)\\s+(collect|stash|summaryindex|sumindex)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.collect"
+                }
+            ]
+        },
+        "arguments.collect": {
+            "patterns": [
+                {
+                    "match": "(testmode|index|sourcetype|file|spool|run_in_preview|host|marker|uselb|addtime|source)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.mcatalog": {
+            "begin": "(?<=\\[|\\|)\\s+(mcatalog)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.mcatalog"
+                },
+                {
+                    "include": "#functions.mcatalog"
+                },
+                {
+                    "include": "#operators.mcatalog"
+                }
+            ]
+        },
+        "arguments.mcatalog": {
+            "patterns": [
+                {
+                    "match": "(monthsago|endtimeu|savedsplunk|minutesago|daysago|hoursago|startmonthsago|starttime|append|endmonthsago|latest|searchtimespanminutes|prestats|startminutesago|earliest|searchtimespandays|starthoursago|_index_earliest|enddaysago|endminutesago|searchtimespanhours|startdaysago|_index_latest|timeformat|endhoursago|endtime|searchtimespanmonths|starttimeu|savedsearch)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.mcatalog": {
+            "match": "\\b(as|values)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.mcatalog": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(WHERE|BY|IN|AS|VALUES|GROUPBY)\\b"
+        },
+        "commands.mcollect": {
+            "begin": "(?<=\\[|\\|)\\s+(mcollect)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.mcollect"
+                }
+            ]
+        },
+        "arguments.mcollect": {
+            "patterns": [
+                {
+                    "match": "(split|prefix_field|file|index|sourcetype|spool|host|source)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.meventcollect": {
+            "begin": "(?<=\\[|\\|)\\s+(meventcollect)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.meventcollect"
+                }
+            ]
+        },
+        "arguments.meventcollect": {
+            "patterns": [
+                {
+                    "match": "(sourcetype|split|spool|prefix_field|host|source|index)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.mrollup": {
+            "begin": "(?<=\\[|\\|)\\s+(mrollup)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.mrollup"
+                },
+                {
+                    "include": "#functions.mrollup"
+                },
+                {
+                    "include": "#operators.mrollup"
+                }
+            ]
+        },
+        "arguments.mrollup": {
+            "patterns": [
+                {
+                    "match": "(overrides|span|type|aggregate|file|list|target|source)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.mrollup": {
+            "match": "\\b(max|dimension|count|metric|included|avg|median|excluded|list|min|sum|perc)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.mrollup": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(EXCLUDED|DIMENSION|MEDIAN|LIST|AVG|COUNT|INCLUDED|MIN|MAX|METRIC|PERC|SUM)\\b"
+        },
+        "commands.streamstats": {
+            "begin": "(?<=\\[|\\|)\\s+(streamstats)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.streamstats"
+                },
+                {
+                    "include": "#functions.streamstats"
+                },
+                {
+                    "include": "#operators.streamstats"
+                }
+            ]
+        },
+        "arguments.streamstats": {
+            "patterns": [
+                {
+                    "match": "(global|allnum|reset_on_change|reset_before|window|time_window|current|reset_after)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.streamstats": {
+            "match": "\\b(exact|split|count|sec|replace|hr|floor|ceiling|true|typeof|tanh|perc|isnotnull|var|random|ln|mvsort|mvdedup|stdev|tan|exactperc|sqrt|spath|atan2|mvfilter|acosh|coalesce|varp|mvzip|asinh|week|time|strptime|distinct_count|mvindex|abs|log|isbool|commands|max|sin|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|stdevp|now|urldecode|p|cosh|tonumber|md5|case|cidrmatch|dc|lower|mean|like|c|isnull|false|upper|sha512|len|mvmap|as|sha1|atan|exp|match|quarter|month|avg|tostring|ltrim|hypot|year|round|min|pow|isint|isnum|day|relative_time|sha256|upperperc|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.streamstats": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|MEAN|STRFTIME|SPLIT|SINH|MVINDEX|MVCOUNT|COMMANDS|SHA512|MIN|P|HR|RTRIM|AS|ISNULL|MVDEDUP|TIME|FALSE|DC|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|STRPTIME|C|ISSTR|EXACTPERC|CASE|RANDOM|MVZIP|UPPER|STDEVP|TRUE|MVFIND|TANH|ISINT|COUNT|DAY|UPPERPERC|CEIL|LOG|DISTINCT_COUNT|LEN|PERC|OR|NULLIF|WEEK|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|MAX|REPLACE|MVAPPEND|ASINH|SEC|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|MVSORT|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|QUARTER|TAN|MONTH|EXACT|POW|VAR|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|YEAR|SIN|PI|AVG|TONUMBER|ABS|ACOSH|LTRIM|STDEV|SHA256|FLOOR|MVMAP|LIKE|VARP|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.eventstats": {
+            "begin": "(?<=\\[|\\|)\\s+(eventstats)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.eventstats"
+                },
+                {
+                    "include": "#functions.eventstats"
+                },
+                {
+                    "include": "#operators.eventstats"
+                }
+            ]
+        },
+        "arguments.eventstats": {
+            "patterns": [
+                {
+                    "match": "(allnum)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.eventstats": {
+            "match": "\\b(exact|split|count|replace|floor|ceiling|true|typeof|tanh|perc|isnotnull|var|random|ln|mvsort|mvdedup|stdev|tan|exactperc|sqrt|spath|atan2|mvfilter|acosh|coalesce|varp|mvzip|asinh|time|strptime|distinct_count|mvindex|abs|log|isbool|commands|max|sin|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|stdevp|now|urldecode|p|cosh|tonumber|md5|case|dc|cidrmatch|lower|mean|like|c|isnull|false|upper|sha512|len|mvmap|as|sha1|atan|exp|match|avg|tostring|ltrim|hypot|round|min|pow|isint|isnum|relative_time|sha256|upperperc|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.eventstats": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|MEAN|STRFTIME|SPLIT|SINH|MVINDEX|MVCOUNT|COMMANDS|SHA512|MIN|P|RTRIM|ISNULL|AS|MVDEDUP|TIME|FALSE|DC|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|STRPTIME|C|ISSTR|EXACTPERC|CASE|RANDOM|MVZIP|UPPER|STDEVP|TRUE|MVFIND|TANH|ISINT|COUNT|UPPERPERC|CEIL|LOG|DISTINCT_COUNT|LEN|PERC|OR|NULLIF|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|MAX|REPLACE|MVAPPEND|ASINH|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|MVSORT|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|TAN|EXACT|POW|VAR|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|SIN|PI|AVG|TONUMBER|ABS|ACOSH|LTRIM|STDEV|SHA256|FLOOR|MVMAP|LIKE|VARP|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.stats": {
+            "begin": "(?<=\\[|\\|)\\s+(stats)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.stats"
+                },
+                {
+                    "include": "#functions.stats"
+                },
+                {
+                    "include": "#operators.stats"
+                }
+            ]
+        },
+        "arguments.stats": {
+            "patterns": [
+                {
+                    "match": "(partitions|allnum|dedup_splitvals|delim)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.stats": {
+            "match": "\\b(exact|split|count|sec|replace|hr|floor|ceiling|true|typeof|tanh|perc|isnotnull|var|random|ln|mvsort|sparkline|mvdedup|stdev|tan|exactperc|sqrt|spath|atan2|mvfilter|acosh|coalesce|varp|mvzip|asinh|week|time|strptime|range|distinct_count|mvindex|abs|sum|log|isbool|max|commands|sin|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|stdevp|now|urldecode|p|cosh|tonumber|md5|case|dc|cidrmatch|lower|mean|like|c|isnull|false|upper|sha512|len|mvmap|as|sha1|atan|exp|match|quarter|month|avg|tostring|ltrim|hypot|year|round|min|pow|isint|isnum|day|relative_time|sha256|sumsq|upperperc|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.stats": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|MEAN|STRFTIME|SPLIT|SINH|MVINDEX|MVCOUNT|COMMANDS|SHA512|MIN|P|HR|RTRIM|AS|ISNULL|MVDEDUP|TIME|FALSE|DC|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|STRPTIME|C|ISSTR|EXACTPERC|CASE|RANDOM|MVZIP|UPPER|STDEVP|TRUE|MVFIND|TANH|COUNT|ISINT|DAY|UPPERPERC|CEIL|LOG|DISTINCT_COUNT|LEN|PERC|OR|NULLIF|SUMSQ|WEEK|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|MAX|REPLACE|MVAPPEND|ASINH|SEC|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|MVSORT|SUM|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|QUARTER|TAN|MONTH|EXACT|POW|VAR|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|YEAR|SIN|SPARKLINE|PI|AVG|TONUMBER|ABS|ACOSH|RANGE|LTRIM|STDEV|SHA256|FLOOR|MVMAP|LIKE|VARP|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.strcat": {
+            "begin": "(?<=\\[|\\|)\\s+(strcat)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.strcat"
+                }
+            ]
+        },
+        "arguments.strcat": {
+            "patterns": [
+                {
+                    "match": "(allrequired)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.streamedcsv": {
+            "begin": "(?<=\\[|\\|)\\s+(streamedcsv)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.streamedcsv"
+                }
+            ]
+        },
+        "arguments.streamedcsv": {
+            "patterns": [
+                {
+                    "match": "(chunk)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.sistats": {
+            "begin": "(?<=\\[|\\|)\\s+(sistats)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.sistats"
+                },
+                {
+                    "include": "#functions.sistats"
+                },
+                {
+                    "include": "#operators.sistats"
+                }
+            ]
+        },
+        "arguments.sistats": {
+            "patterns": [
+                {
+                    "match": "(partitions|allnum|dedup_splitvals|delim)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.sistats": {
+            "match": "\\b(exact|split|count|sec|replace|hr|floor|ceiling|true|typeof|tanh|perc|isnotnull|var|random|ln|mvsort|sparkline|mvdedup|stdev|tan|exactperc|sqrt|spath|atan2|mvfilter|acosh|coalesce|varp|mvzip|asinh|week|time|strptime|range|distinct_count|mvindex|abs|sum|log|isbool|max|commands|sin|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|stdevp|now|urldecode|p|cosh|tonumber|md5|case|dc|cidrmatch|lower|mean|like|c|isnull|false|upper|sha512|len|mvmap|as|sha1|atan|exp|match|quarter|month|avg|tostring|ltrim|hypot|year|round|min|pow|isint|isnum|day|relative_time|sha256|sumsq|upperperc|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.sistats": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|MEAN|STRFTIME|SPLIT|SINH|MVINDEX|MVCOUNT|COMMANDS|SHA512|MIN|P|HR|RTRIM|AS|ISNULL|MVDEDUP|TIME|FALSE|DC|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|STRPTIME|C|ISSTR|EXACTPERC|CASE|RANDOM|MVZIP|UPPER|STDEVP|TRUE|MVFIND|TANH|COUNT|ISINT|DAY|UPPERPERC|CEIL|LOG|DISTINCT_COUNT|LEN|PERC|OR|NULLIF|SUMSQ|WEEK|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|MAX|REPLACE|MVAPPEND|ASINH|SEC|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|MVSORT|SUM|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|QUARTER|TAN|MONTH|EXACT|POW|VAR|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|YEAR|SIN|SPARKLINE|PI|AVG|TONUMBER|ABS|ACOSH|RANGE|LTRIM|STDEV|SHA256|FLOOR|MVMAP|LIKE|VARP|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.sitop": {
+            "begin": "(?<=\\[|\\|)\\s+(sitop)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.sitop"
+                }
+            ]
+        },
+        "arguments.sitop": {
+            "patterns": [
+                {
+                    "match": "(percentfield|showcount|useother|limit|countfield|showperc|otherstr)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.sirare": {
+            "begin": "(?<=\\[|\\|)\\s+(sirare)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.sirare"
+                }
+            ]
+        },
+        "arguments.sirare": {
+            "patterns": [
+                {
+                    "match": "(percentfield|showcount|useother|limit|countfield|showperc|otherstr)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.sichart": {
+            "begin": "(?<=\\[|\\|)\\s+(sichart)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.sichart"
+                },
+                {
+                    "include": "#functions.sichart"
+                },
+                {
+                    "include": "#operators.sichart"
+                }
+            ]
+        },
+        "arguments.sichart": {
+            "patterns": [
+                {
+                    "match": "(minspan|span|dedup_splitvals|start|aligntime|agg|bins|otherstr|sep|usenull|nullstr|end|useother|cont|limit|format)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.sichart": {
+            "match": "\\b(exact|split|count|sec|replace|hr|floor|ceiling|true|typeof|tanh|perc|isnotnull|var|earliest|random|ln|mvsort|sparkline|mvdedup|stdev|tan|exactperc|sqrt|spath|atan2|mvfilter|acosh|coalesce|varp|mvzip|asinh|week|notin|time|strptime|range|mvindex|distinct_count|abs|sum|log|top|isbool|max|commands|sin|in|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|stdevp|now|urldecode|p|cosh|tonumber|md5|case|dc|cidrmatch|lower|mean|like|c|isnull|false|upper|sha512|len|mvmap|as|sha1|bottom|atan|exp|match|quarter|month|avg|tostring|ltrim|hypot|year|round|latest|min|pow|isint|isnum|day|relative_time|sha256|sumsq|upperperc|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.sichart": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|MEAN|STRFTIME|SPLIT|SINH|MVINDEX|MVCOUNT|COMMANDS|OVER|SHA512|MIN|P|HR|RTRIM|AS|ISNULL|MVDEDUP|TIME|FALSE|DC|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|IN|STRPTIME|C|ISSTR|EXACTPERC|CASE|RANDOM|MVZIP|UPPER|STDEVP|TRUE|MVFIND|TANH|COUNT|ISINT|DAY|UPPERPERC|CEIL|LOG|DISTINCT_COUNT|LEN|PERC|OR|NULLIF|TOP|SUMSQ|WEEK|CEILING|IFNULL|MVFILTER|ASIN|XOR|EARLIEST|ISBOOL|BY|MAX|REPLACE|MVAPPEND|ASINH|SEC|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|LATEST|BOTTOM|MVSORT|SUM|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|QUARTER|TAN|MONTH|EXACT|POW|VAR|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|YEAR|SIN|SPARKLINE|PI|AVG|TONUMBER|ABS|NOTIN|ACOSH|RANGE|LTRIM|STDEV|SHA256|FLOOR|MVMAP|LIKE|VARP|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.sitimechart": {
+            "begin": "(?<=\\[|\\|)\\s+(sitimechart)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.sitimechart"
+                },
+                {
+                    "include": "#functions.sitimechart"
+                },
+                {
+                    "include": "#operators.sitimechart"
+                }
+            ]
+        },
+        "arguments.sitimechart": {
+            "patterns": [
+                {
+                    "match": "(minspan|fixedrange|span|dedup_splitvals|start|aligntime|bins|otherstr|usenull|partial|sep|format|nullstr|useother|cont|limit|end)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.sitimechart": {
+            "match": "\\b(exact|split|count|sec|replace|hr|floor|ceiling|true|typeof|tanh|perc|isnotnull|var|earliest|random|ln|mvsort|mvdedup|stdev|tan|exactperc|sqrt|spath|atan2|mvfilter|acosh|coalesce|varp|mvzip|asinh|week|notin|time|strptime|distinct_count|mvindex|abs|log|top|isbool|commands|max|sin|in|sigfig|per_day|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|per_second|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|stdevp|now|urldecode|p|cosh|tonumber|md5|case|dc|cidrmatch|lower|mean|like|c|isnull|false|upper|sha512|len|mvmap|as|sha1|bottom|atan|per_hour|exp|match|quarter|month|avg|tostring|ltrim|hypot|year|round|latest|min|per_minute|pow|isint|isnum|day|relative_time|sha256|upperperc|atanh|null|by|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.sitimechart": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|PER_DAY|MEAN|STRFTIME|SPLIT|SINH|MVINDEX|MVCOUNT|COMMANDS|SHA512|MIN|P|HR|RTRIM|AS|ISNULL|MVDEDUP|TIME|FALSE|DC|SEARCHMATCH|ACOS|TRIM|NOT|PER_MINUTE|ATAN|MATCH|IN|STRPTIME|C|PER_HOUR|EXACTPERC|ISSTR|CASE|RANDOM|MVZIP|UPPER|STDEVP|TRUE|MVFIND|TANH|COUNT|ISINT|DAY|UPPERPERC|CEIL|LOG|DISTINCT_COUNT|LEN|PERC|OR|NULLIF|TOP|WEEK|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|EARLIEST|BY|MAX|REPLACE|MVAPPEND|ASINH|SEC|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|LATEST|BOTTOM|MVSORT|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|QUARTER|TAN|MONTH|EXACT|POW|VAR|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|YEAR|SIN|PI|AVG|TONUMBER|ABS|NOTIN|ACOSH|LTRIM|PER_SECOND|STDEV|SHA256|FLOOR|MVMAP|LIKE|VARP|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.tags": {
+            "begin": "(?<=\\[|\\|)\\s+(tags)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.tags"
+                }
+            ]
+        },
+        "arguments.tags": {
+            "patterns": [
+                {
+                    "match": "(outputfield|inclvalue|inclname)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.tagcreate": {
+            "begin": "(?<=\\[|\\|)\\s+(tagcreate)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.tagdelete": {
+            "begin": "(?<=\\[|\\|)\\s+(tagdelete)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.tagset": {
+            "begin": "(?<=\\[|\\|)\\s+(tagset)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.trendline": {
+            "begin": "(?<=\\[|\\|)\\s+(trendline)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.trendline"
+                },
+                {
+                    "include": "#operators.trendline"
+                }
+            ]
+        },
+        "functions.trendline": {
+            "match": "\\b(ema|as|sma|wma)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.trendline": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(SMA|EMA|WMA|AS)\\b"
+        },
+        "commands.timechart": {
+            "begin": "(?<=\\[|\\|)\\s+(timechart)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.timechart"
+                },
+                {
+                    "include": "#functions.timechart"
+                },
+                {
+                    "include": "#operators.timechart"
+                }
+            ]
+        },
+        "arguments.timechart": {
+            "patterns": [
+                {
+                    "match": "(minspan|fixedrange|span|dedup_splitvals|start|aligntime|bins|otherstr|usenull|partial|sep|format|nullstr|useother|cont|limit|end)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.timechart": {
+            "match": "\\b(exact|split|count|sec|replace|hr|floor|ceiling|true|typeof|tanh|perc|isnotnull|var|earliest|random|ln|mvsort|mvdedup|stdev|tan|exactperc|sqrt|spath|atan2|mvfilter|acosh|coalesce|varp|mvzip|asinh|week|notin|time|strptime|distinct_count|mvindex|abs|log|top|isbool|commands|max|sin|in|sigfig|per_day|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|per_second|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|stdevp|now|urldecode|p|cosh|tonumber|md5|case|dc|cidrmatch|lower|mean|like|c|isnull|false|upper|sha512|len|mvmap|as|sha1|bottom|atan|per_hour|exp|match|quarter|month|avg|tostring|ltrim|hypot|year|round|latest|min|per_minute|pow|isint|isnum|day|relative_time|sha256|upperperc|atanh|null|by|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.timechart": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|PER_DAY|MEAN|STRFTIME|SPLIT|SINH|MVINDEX|MVCOUNT|COMMANDS|SHA512|MIN|P|HR|RTRIM|AS|ISNULL|MVDEDUP|TIME|FALSE|DC|SEARCHMATCH|ACOS|TRIM|NOT|PER_MINUTE|ATAN|MATCH|IN|STRPTIME|C|PER_HOUR|EXACTPERC|ISSTR|CASE|RANDOM|MVZIP|UPPER|STDEVP|TRUE|MVFIND|TANH|COUNT|ISINT|DAY|UPPERPERC|CEIL|LOG|DISTINCT_COUNT|LEN|PERC|OR|NULLIF|TOP|WEEK|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|EARLIEST|BY|MAX|REPLACE|MVAPPEND|ASINH|SEC|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|LATEST|BOTTOM|MVSORT|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|QUARTER|TAN|MONTH|EXACT|POW|VAR|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|YEAR|SIN|PI|AVG|TONUMBER|ABS|NOTIN|ACOSH|LTRIM|PER_SECOND|STDEV|SHA256|FLOOR|MVMAP|LIKE|VARP|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.timewrap": {
+            "begin": "(?<=\\[|\\|)\\s+(timewrap)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.timewrap"
+                },
+                {
+                    "include": "#functions.timewrap"
+                },
+                {
+                    "include": "#operators.timewrap"
+                }
+            ]
+        },
+        "arguments.timewrap": {
+            "patterns": [
+                {
+                    "match": "(align|series|time_format)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.timewrap": {
+            "match": "\\b(exact|day|quarter|sec|week|hr|month|relative|year|short|min|now|end)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.timewrap": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|WEEK|YEAR|QUARTER|DAY|MONTH|SHORT|MIN|HR|EXACT|END|RELATIVE|SEC)\\b"
+        },
+        "commands.top": {
+            "begin": "(?<=\\[|\\|)\\s+(top|common)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.top"
+                }
+            ]
+        },
+        "arguments.top": {
+            "patterns": [
+                {
+                    "match": "(percentfield|showcount|useother|limit|countfield|showperc|otherstr)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.tscollect": {
+            "begin": "(?<=\\[|\\|)\\s+(tscollect)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.tscollect"
+                }
+            ]
+        },
+        "arguments.tscollect": {
+            "patterns": [
+                {
+                    "match": "(keepresults|squashcase|namespace)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.mstats": {
+            "begin": "(?<=\\[|\\|)\\s+(mstats)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.mstats"
+                },
+                {
+                    "include": "#functions.mstats"
+                },
+                {
+                    "include": "#operators.mstats"
+                }
+            ]
+        },
+        "arguments.mstats": {
+            "patterns": [
+                {
+                    "match": "(monthsago|endtimeu|savedsplunk|hoursago|daysago|minutesago|span|starttime|searchtimespanminutes|endmonthsago|latest|append|fillnull_value|prestats|startminutesago|savedsearch|earliest|searchtimespandays|starttimeu|starthoursago|enddaysago|searchtimespanhours|endminutesago|startdaysago|_index_latest|timeformat|endhoursago|endtime|searchtimespanmonths|_index_earliest|backfill|update_period|startmonthsago)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.mstats": {
+            "match": "\\b(var|varp|count|dc|upperperc|stdev|exactperc|avg|mean|distinct_count|c|stdevp|as|perc|p)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.mstats": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(MEAN|COUNT|AVG|UPPERPERC|WHERE|P|DISTINCT_COUNT|AS|PERC|DC|STDEV|GROUPBY|VARP|IN|C|EXACTPERC|BY|STDEVP|VAR)\\b"
+        },
+        "commands.tstats": {
+            "begin": "(?<=\\[|\\|)\\s+(tstats)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.tstats"
+                },
+                {
+                    "include": "#functions.tstats"
+                },
+                {
+                    "include": "#operators.tstats"
+                }
+            ]
+        },
+        "arguments.tstats": {
+            "patterns": [
+                {
+                    "match": "(monthsago|local|hoursago|daysago|minutesago|include_reduced_buckets|startmonthsago|allow_old_summaries|append|endmonthsago|fillnull_value|prestats|startminutesago|earliest|searchtimespandays|starthoursago|enddaysago|sid|startdaysago|timeformat|endhoursago|endtime|starttimeu|chunk_size|endtimeu|savedsplunk|span|starttime|searchtimespanminutes|latest|summariesonly|searchtimespanhours|endminutesago|_index_latest|datamodel|searchtimespanmonths|_index_earliest|savedsearch)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.tstats": {
+            "match": "\\b(var|varp|count|dc|upperperc|stdev|exactperc|avg|mean|distinct_count|c|stdevp|by|as|perc|p)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.tstats": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(MEAN|COUNT|AVG|UPPERPERC|WHERE|P|DISTINCT_COUNT|AS|PERC|DC|STDEV|GROUPBY|FROM|PREFIX|VARP|IN|C|EXACTPERC|BY|STDEVP|VAR)\\b"
+        },
+        "commands.transaction": {
+            "begin": "(?<=\\[|\\|)\\s+(transaction|transam)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.transaction"
+                },
+                {
+                    "include": "#functions.transaction"
+                },
+                {
+                    "include": "#operators.transaction"
+                }
+            ]
+        },
+        "arguments.transaction": {
+            "patterns": [
+                {
+                    "match": "(monthsago|maxopenevents|connected|hoursago|daysago|endswith|minutesago|keeporphans|maxopentxn|name|nullstr|endmonthsago|startminutesago|earliest|searchtimespandays|starthoursago|enddaysago|delim|startdaysago|timeformat|endhoursago|endtime|starttimeu|endtimeu|savedsplunk|keepevicted|mvraw|maxevents|startswith|starttime|searchtimespanminutes|latest|savedsearch|mvlist|searchtimespanhours|endminutesago|maxpause|unifyends|_index_latest|maxspan|searchtimespanmonths|_index_earliest|startmonthsago)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.transaction": {
+            "match": "\\b(m|s|d|h)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.transaction": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(H|S|D|IN|M)\\b"
+        },
+        "commands.typeahead": {
+            "begin": "(?<=\\[|\\|)\\s+(typeahead)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.typeahead"
+                }
+            ]
+        },
+        "arguments.typeahead": {
+            "patterns": [
+                {
+                    "match": "(max_time|collapse|endtimeu|count|starttimeu|prefix|index)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.typelearner": {
+            "begin": "(?<=\\[|\\|)\\s+(typelearner)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.typelearner"
+                }
+            ]
+        },
+        "arguments.typelearner": {
+            "patterns": [
+                {
+                    "match": "(maxlen)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.typer": {
+            "begin": "(?<=\\[|\\|)\\s+(typer)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.where": {
+            "begin": "(?<=\\[|\\|)\\s+(where)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.where"
+                },
+                {
+                    "include": "#operators.where"
+                }
+            ]
+        },
+        "functions.where": {
+            "match": "\\b(exact|split|replace|floor|ceiling|true|typeof|tanh|isnotnull|random|ln|mvsort|mvdedup|tan|sqrt|spath|atan2|mvfilter|acosh|coalesce|mvzip|asinh|time|strptime|mvindex|abs|log|isbool|commands|max|sin|sigfig|asin|validate|mvjoin|rtrim|nullif|trim|strftime|isstr|searchmatch|mvfind|acos|ifnull|substr|mvappend|mvrange|sinh|if|mvcount|pi|ceil|now|urldecode|cosh|tonumber|md5|case|cidrmatch|lower|like|isnull|false|upper|sha512|len|mvmap|sha1|atan|exp|match|tostring|ltrim|hypot|round|min|pow|isint|isnum|relative_time|sha256|atanh|null|cos)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.where": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(NOW|STRFTIME|SPLIT|MVINDEX|SINH|MVCOUNT|COMMANDS|SHA512|MIN|RTRIM|ISNULL|MVDEDUP|TIME|FALSE|SEARCHMATCH|ACOS|TRIM|NOT|ATAN|MATCH|STRPTIME|ISSTR|CASE|RANDOM|MVZIP|UPPER|TRUE|MVFIND|TANH|ISINT|CEIL|LOG|LEN|OR|NULLIF|CEILING|IFNULL|MVFILTER|ASIN|XOR|ISBOOL|MAX|REPLACE|MVAPPEND|ASINH|ISNOTNULL|MD5|COALESCE|LOWER|SPATH|ATAN2|MVSORT|LN|IF|MVRANGE|ATANH|EXP|MVJOIN|SIGFIG|TAN|EXACT|POW|TYPEOF|SHA1|VALIDATE|HYPOT|COS|AND|SIN|PI|TONUMBER|ABS|ACOSH|LTRIM|SHA256|FLOOR|MVMAP|LIKE|NULL|URLDECODE|TOSTRING|SQRT|ROUND|CIDRMATCH|COSH|RELATIVE_TIME|SUBSTR|ISNUM)\\b"
+        },
+        "commands.highlight": {
+            "begin": "(?<=\\[|\\|)\\s+(highlight|hilite)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.xyseries": {
+            "begin": "(?<=\\[|\\|)\\s+(xyseries|maketable)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.xyseries"
+                }
+            ]
+        },
+        "arguments.xyseries": {
+            "patterns": [
+                {
+                    "match": "(format|sep|grouped)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.untable": {
+            "begin": "(?<=\\[|\\|)\\s+(untable)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.rest": {
+            "begin": "(?<=\\[|\\|)\\s+(rest)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.rest"
+                }
+            ]
+        },
+        "arguments.rest": {
+            "patterns": [
+                {
+                    "match": "(count|splunk_server_group|timeout|splunk_server)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.surrounding": {
+            "begin": "(?<=\\[|\\|)\\s+(surrounding)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.surrounding"
+                },
+                {
+                    "include": "#operators.surrounding"
+                }
+            ]
+        },
+        "arguments.surrounding": {
+            "patterns": [
+                {
+                    "match": "(timeafter|readlevel|searchkeys|id|timebefore)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "operators.surrounding": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(2|0|1|3)\\b"
+        },
+        "commands.xmlkv": {
+            "begin": "(?<=\\[|\\|)\\s+(xmlkv)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.xmlkv"
+                }
+            ]
+        },
+        "arguments.xmlkv": {
+            "patterns": [
+                {
+                    "match": "(maxinputs)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.xmlunescape": {
+            "begin": "(?<=\\[|\\|)\\s+(xmlunescape)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.xmlunescape"
+                }
+            ]
+        },
+        "arguments.xmlunescape": {
+            "patterns": [
+                {
+                    "match": "(maxinputs)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.xpath": {
+            "begin": "(?<=\\[|\\|)\\s+(xpath)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.xpath"
+                }
+            ]
+        },
+        "arguments.xpath": {
+            "patterns": [
+                {
+                    "match": "(field|outfield|default)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.iplocation": {
+            "begin": "(?<=\\[|\\|)\\s+(iplocation)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.iplocation"
+                }
+            ]
+        },
+        "arguments.iplocation": {
+            "patterns": [
+                {
+                    "match": "(lang|prefix|allfields)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.rangemap": {
+            "begin": "(?<=\\[|\\|)\\s+(rangemap)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.rangemap"
+                }
+            ]
+        },
+        "arguments.rangemap": {
+            "patterns": [
+                {
+                    "match": "(field|default)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.rawstats": {
+            "begin": "(?<=\\[|\\|)\\s+(rawstats)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.reltime": {
+            "begin": "(?<=\\[|\\|)\\s+(reltime)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.scrub": {
+            "begin": "(?<=\\[|\\|)\\s+(scrub)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.scrub"
+                },
+                {
+                    "include": "#functions.scrub"
+                },
+                {
+                    "include": "#operators.scrub"
+                }
+            ]
+        },
+        "arguments.scrub": {
+            "patterns": [
+                {
+                    "match": "(dictionary|terms|timeconfig|namespace)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.scrub": {
+            "match": "\\b(name|public|private)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.scrub": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(PUBLIC|NAME|PRIVATE)\\b"
+        },
+        "commands.metadata": {
+            "begin": "(?<=\\[|\\|)\\s+(metadata)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.metadata"
+                },
+                {
+                    "include": "#functions.metadata"
+                },
+                {
+                    "include": "#operators.metadata"
+                }
+            ]
+        },
+        "arguments.metadata": {
+            "patterns": [
+                {
+                    "match": "(splunk_server|datatype|type|splunk_server_group|index)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.metadata": {
+            "match": "\\b(sources|sourcetypes|hosts)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.metadata": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(SOURCES|SOURCETYPES|HOSTS)\\b"
+        },
+        "commands.eventcount": {
+            "begin": "(?<=\\[|\\|)\\s+(eventcount)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.eventcount"
+                }
+            ]
+        },
+        "arguments.eventcount": {
+            "patterns": [
+                {
+                    "match": "(index|list_vix|summarize|report_size)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.findtypes": {
+            "begin": "(?<=\\[|\\|)\\s+(findtypes)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.findtypes"
+                }
+            ]
+        },
+        "arguments.findtypes": {
+            "patterns": [
+                {
+                    "match": "(max|useraw|notcovered)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.return": {
+            "begin": "(?<=\\[|\\|)\\s+(return)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.runshellscript": {
+            "begin": "(?<=\\[|\\|)\\s+(runshellscript)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.searchtxn": {
+            "begin": "(?<=\\[|\\|)\\s+(searchtxn)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.searchtxn"
+                }
+            ]
+        },
+        "arguments.searchtxn": {
+            "patterns": [
+                {
+                    "match": "(use_disjunct|max_terms|eventsonly)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.walklex": {
+            "begin": "(?<=\\[|\\|)\\s+(walklex)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.walklex"
+                },
+                {
+                    "include": "#functions.walklex"
+                },
+                {
+                    "include": "#operators.walklex"
+                }
+            ]
+        },
+        "arguments.walklex": {
+            "patterns": [
+                {
+                    "match": "(pattern|splunk_server|type|splunk_server_group|prefix|index)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.walklex": {
+            "match": "\\b(term|field|all|fieldvalue)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.walklex": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(FIELD|FIELDVALUE|ALL|TERM)\\b"
+        },
+        "commands.msearch": {
+            "begin": "(?<=\\[|\\|)\\s+(msearch)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.msearch"
+                }
+            ]
+        },
+        "arguments.msearch": {
+            "patterns": [
+                {
+                    "match": "(filter|earliest|splunk_server|latest|splunk_server_group|index)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "commands.x11": {
+            "begin": "(?<=\\[|\\|)\\s+(x11)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functions.x11"
+                },
+                {
+                    "include": "#operators.x11"
+                }
+            ]
+        },
+        "functions.x11": {
+            "match": "\\b(as|mult|add)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.x11": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(ADD|MULT|AS)\\b"
+        },
+        "commands.union": {
+            "begin": "(?<=\\[|\\|)\\s+(union)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#arguments.union"
+                },
+                {
+                    "include": "#functions.union"
+                },
+                {
+                    "include": "#operators.union"
+                }
+            ]
+        },
+        "arguments.union": {
+            "patterns": [
+                {
+                    "match": "(maxout|extendtimerange|timeout|maxtime)=(?:.+?)(?:\\s|$)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.spl"
+                        }
+                    }
+                }
+            ]
+        },
+        "functions.union": {
+            "match": "\\b(datamodel|federated|inputlookup|savedsearch)(\\()",
+            "captures": {
+                "1": {
+                    "name": "support.function.spl"
+                }
+            }
+        },
+        "operators.union": {
+            "name": "keyword.operator.word.spl",
+            "match": "\\b(INPUTLOOKUP|FEDERATED|SAVEDSEARCH|DATAMODEL)\\b"
+        },
+        "commands.dfsjob": {
+            "begin": "(?<=\\[|\\|)\\s+(dfsjob)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        },
+        "commands.jsontxn": {
+            "begin": "(?<=\\[|\\|)\\s+(jsontxn)\\b",
+            "end": "(?<=\\]|\\|)",
+            "captures": {
+                "1": {
+                    "name": "support.class.spl"
+                }
+            },
+            "patterns": []
+        }
+    },
+    "scopeName": "source.spl"
+}
