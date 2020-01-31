@@ -49,7 +49,7 @@ by setting ``SPLUNK_USERNAME`` and ``SPLUNK_PASSWORD`` environment variables.
 In both cases, the application allows to **view** details about a particlular
 SPL command or **generate** a tmLanguage grammar file.
 
-f using **view** command, the command name is expected as argument. The command
+If using **view** command, the command name is expected as argument. The command
 details are then retrieved and displayed in the console.
 
 Example of **view** invocation in **remote** mode::
