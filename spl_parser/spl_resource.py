@@ -1,5 +1,6 @@
 import aiohttp
 import asyncio
+import configparser
 import importlib.resources as pkg_resources
 import json
 
@@ -67,7 +68,7 @@ class LocalSplResource(SplResource):
                 with open(self.file) as f:
                     json_data = json.loads(f.read())
                 self.spl_terms = parse_json(json_data, spl_terms)
-        except KeyError:
+        except (KeyError, ValueError, configparser.Error):
             raise ParsingError(self.file)
 
 
@@ -90,11 +91,10 @@ class RemoteSplResource(SplResource):
     def fetch_spl_terms(self, spl_terms=list()):
         asyncio.run(self.async_fetch_spl_terms(spl_terms))
 
-
     async def async_fetch_spl_terms(self, spl_terms):
         self.session = aiohttp.ClientSession(headers=self.headers,
-                        connector=aiohttp.TCPConnector(verify_ssl=False),
-                        auth=self.auth, raise_for_status=True)
+                            connector=aiohttp.TCPConnector(verify_ssl=False),
+                            auth=self.auth, raise_for_status=True)
 
         async with self.session:
             try:

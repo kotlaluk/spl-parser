@@ -27,7 +27,7 @@
                 "match": "\\b(<example_operator>)\\b"
             },
             "functions.<example_command>": {
-                "match": "\\b(<example_function>)(\\(|\\b)",
+                "match": "\\b(<example_function>)(\\()",
                 "captures": {
                     "1": { "name": "support.function.spl" }
                 }

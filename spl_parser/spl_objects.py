@@ -24,18 +24,18 @@ class SPLCommand(SPLTerm):
     def __init__(self, name, syntax):
         super().__init__(name, syntax)
         self.aliases = list()
-        self.arguments = list()
-        self.functions = list()
-        self.operators = list()
+        self.arguments = set()
+        self.functions = set()
+        self.operators = set()
 
     def parse(self, syntax_trees):
         related_trees = find_related_trees(self.name, syntax_trees)
         if related_trees:
             for tree in related_trees.values():
                 (arguments, functions, operators) = parse_syntax_tree(tree)
-                self.arguments.extend(list(arguments))
-                self.functions.extend(list(functions))
-                self.operators.extend(list(operators))
+                self.arguments.update(arguments)
+                self.functions.update(functions)
+                self.operators.update(operators)
         else:
             log_message("WARNING", f"{self.name} command may not work properly")
 

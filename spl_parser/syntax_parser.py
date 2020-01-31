@@ -1,7 +1,8 @@
 from lark import Lark
-from lark.exceptions import UnexpectedCharacters, UnexpectedEOF
+from lark.exceptions import GrammarError, UnexpectedCharacters, UnexpectedEOF
 
 from spl_parser.cli_print import log_message
+from spl_parser.exceptions import InitError
 
 
 class LarkParser:
@@ -27,7 +28,11 @@ def get_token_data(subtree):
 
 
 def build_syntax_trees(pseudo_bnf, spl_terms):
-    parser = LarkParser(pseudo_bnf)
+    try:
+        parser = LarkParser(pseudo_bnf)
+    except GrammarError:
+        raise InitError()
+
     trees = dict()
     for name, term in spl_terms.items():
         try:
@@ -75,8 +80,9 @@ def parse_syntax_tree(tree):
     ops = tree.find_data("operator_word")
     for o in list(ops):
         value = get_token_data(o)
-        if value.isupper():
-            operators.add(value)
+        # if value.isupper():
+        #     operators.add(value)
+        operators.add(value.upper())
         if value.islower():
             functions.add(value)
 

@@ -20,3 +20,8 @@ class AuthenticationError(SplParserError):
 class ConnectionError(SplParserError):
     def __init__(self):
         super().__init__(f"Error connecting to the remote Splunk server!")
+
+
+class InitError(SplParserError):
+    def __init__(self):
+        super().__init__(f"Error initializing parser! Check grammar or template definitions...")

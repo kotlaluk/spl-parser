@@ -35,6 +35,7 @@ class TmLanguageGenerator:
         return {"include": f"#{type}.{name}"}
 
     def generate_grammar_block(self, name, template_block, source, targets):
+        targets = list(targets)
         block_str = json.dumps(template_block)
         if len(targets) > 1:
             for target in targets[:-1]:
@@ -73,6 +74,5 @@ class TmLanguageGenerator:
             self.grammar["repository"][f"operators.{spl_command.name}"] = operators_block
 
     def save_grammar(self, outfile):
-        # TODO make backup if file exists
         with open(outfile, "w") as f:
             f.write(json.dumps(self.grammar, indent=4))
