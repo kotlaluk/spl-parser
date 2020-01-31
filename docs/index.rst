@@ -18,8 +18,6 @@ Contents
    :maxdepth: 2
 
    usage
-   examples
-   installation
    api
 
 
